@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{article.name}}{% endblock %}
+{% block body %}
+    <!-- MENU -->
+    {% include 'menu.html.twig' with {'user': user} %}
+
+    <!-- CONTENT -->
+    <h1>{{article.name}}</h1>
+    <p>{{article.author}}</p>
+    <p>{{article.createdAt}}</p>
+    <img src={{article.image}} alt="image article" />
+    <p>{{article.content}}</p>
+
+
+    <!-- Footer -->
+    {% include 'footer.html.twig' %}
+
+{% endblock %}

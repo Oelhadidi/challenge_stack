@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+{% block body %} 
+    <!-- Menu -->
+    {% include 'menu.html.twig' with {'user': user} %}
+
+    <!-- Banner -->
+    {% include 'banner.html.twig' with {
+        title: 'Blog',
+        background: ''
+    } %}
+
+    <!-- News-->
+    <div class="news blog">
+        <div class="news-container">
+            <h2 class="title">Bienvenue sur notre blog</h2>
+            {% for article in articles %}
+                {% include 'cartBlog.html.twig' with {
+                    article: article
+                } %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Footer -->
+    {% include 'footer.html.twig' %}
+
+{% endblock %}

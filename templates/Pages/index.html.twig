@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+{% block body %}
+
+<!-- MENU -->
+{% include 'menu.html.twig' with {'user': user} %}
+
+<!-- CONTENT -->
+
+    <!-- Banner -->
+    <div class="banner">
+        <!-- Shape -->
+        <img src="./images/Vector 1.png" alt="shape" />
+        <div class="hero-container">
+            <div class="hero-card-container">
+                <div class="hero-card left">
+                    <div class="box-image">
+                        <img src="./images/Star 3.png" alt="star"/>
+                    </div>
+                    <h2 class="title">Saphyre </br><span>Pierre</span> </h2>
+                </div>
+                <div class="hero-card center">
+                    <div class="overlay">
+                        <h2>Made in france
+                            <img class="icone-fr" src="./images/france-2.png" alt="icone france"/>
+                        </h2>
+                    </div>
+                    <h2 class="title"></h2>
+                </div>
+                <div class="hero-card right">
+                    <div class="box-image">
+                        <img src="./images/Star 3.png" alt="star"/>
+                    </div>
+                    <h2 class="title">Emeraude </br><span>Pierre</span> </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- about -->
+    {% include 'BlocApropos.html.twig' with {
+        background: 'Blog',
+        title: '',
+        description: '',
+    }%}
+
+    <!-- Collections -->
+    <div class="collection">
+            <img src="" alt="shape" />
+            <div class="collection-container">
+                <h2>Nos collections</h2>
+                <p class="paragraphe">
+                    Nos collections reflètent notre passion pour la mode et notre engagement envers la durabilité.
+                </p>
+                <!-- Image -->
+                <div class="shape-box">
+                    <div class="shape figure1">
+                        <div class="title-shape">
+                            Ras de cou
+                        </div>
+                    </div>
+                    <div class="shape figure2">
+                        <div class="title-shape">
+                            Boucle d'oreille
+                        </div>
+                    </div>
+                    <div class="shape figure3">
+                        <div class="title-shape">
+                            Sautoir
+                        </div>
+                    </div>
+                    <div class="shape figure4">
+                        <div class="title-shape">
+                            Bracelet
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!-- Slide card -->
+    <div class="product">
+        <div class="separator"></div>
+        <div class="product-container">
+            <h2>Nouveauté </br><span>Nos tops produits</span></h2>
+            <!-- Slide  -->
+            <div class="slide">
+                <div class="slide-container">
+                {% for product in products %}
+                    <div class="slide-card">
+                        <div class="box-img card{{product.id}}"></div>
+                        <div class="text-container">
+                            <h3>{{product.name}}</h3>
+                            <p class="paragraphe">
+                            {{product.description}}
+                            </p>
+                            <p>{{product.price}}€</p>
+                            <a class="btn">Ajouter au panier</a>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+                <div class="arrows-container">
+                    <i class="bi bi-arrow-right-circle"></i>
+                    <i class="bi bi-arrow-left-circle"></i>
+                </div>
+            </div>
+             <!-- BTN -->
+             <a href="/boutique" class="product-btn">Voir plus</a>
+            </div>
+    </div>
+
+    <!-- Actualité -->
+    <div class="news">
+        <div class="news-container">
+            <h2 class="title">Nos actualités<br><span>A la Une</span></h2>
+            <div class="card-container">
+                {% for article in articles %}
+                    <div class="card news_card{{article.id}}">
+                        <div class="text-container">
+                            <h4 class="article-title">{{article.name}}</h4>
+                            <p class="paragraphe">
+                            {{article.description}}
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+<!-- FOOTER -->
+{% include 'footer.html.twig' %}
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A propos {% endblock %}
+{% block body %}
+    <!-- MENU -->
+    {% include 'menu.html.twig' with {'user': user} %}
+
+    <!-- CONTENT -->
+    <div class="about-presentation">
+        <img src="" alt="shape" />
+        <div class="about-presentation-container">
+            <!-- Image -->
+            <div class="presentation-text-container">
+                <div class="box-image-container">
+                    <div class="under-box-image"></div>
+                    <div class="box-image"></div>
+                </div>
+                <div class="text">
+                    <h2>A propos</h2>
+                    <p class="paragraphe">
+                        Le nom de ma société m’est venu naturellement en associant le diminutif de mon prénom à ma passion de toutes les pierres ornementales, qui, par leur multitude de couleurs et d’éclats, ne cessent de m’enchanter depuis l’enfance. Je me suis lancée dans la création de bijoux pour que chaque femme ait la possibilité d’accéder à des gemmes telles que le saphir, l’émeraude ou la tourmaline, belle méconnue se parant de mille teintes, mon unique objectif est que vous trouviez la pierre qui s’accordera à votre humeur du jour ou de toujours à un prix vous permettant de multiplier votre plaisir… Tous mes bijoux sont fabriqués à la main dans mon atelier lyonnais, en éditions limitées pour plus
+                d’exclusivité, certains même en unique exemplaire, ils vous apporteront cette touche particulière qui vous rendra unique, chaque matière ayant été soigneusement sélectionnée.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about-presentation">
+        <div class="about-presentation-container">
+            <!-- Image -->
+            <div class="presentation-text-container reverse">
+                <div class="box-image-container">
+                    <div class="box-image reverse-box-image"></div>
+                </div>
+                <div class="text">
+                    <h2>Notre vision</h2>
+                    <p class="paragraphe">
+                        Cette boutique en ligne est un véritable trésor pour les amateurs de bijoux en pierres précieuses. Elle propose une large sélection de colliers et de bijoux, tous faits à la main et mettant en valeur la beauté naturelle des pierres précieuses. Les clients peuvent trouver des pièces uniques et de qualité, fabriquées à partir de pierres comme l'améthyste, la citrine, le quartz rose et bien d'autres. Chaque bijou est conçu avec soin pour offrir une expérience de magasinage en ligne agréable et satisfaisante.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    {% include 'footer.html.twig' %}
+
+{% endblock %}

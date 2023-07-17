@@ -1,116 +1,13 @@
-{% extends 'base.html.twig' %}
-
-
-<body>
-    {% block body %} 
+<div class="card-container">
+  <div class="card">        
+    <div class="image-card" style="background-image: url('{{ product.background }}')"></div>
+    <div class="text-container-card">
+      <a href="/boutique/{{product.id}}" ><h3>{{product.title}}</h3></a>
+      <p>{{product.description}}</p>
+      <div class="price">
+        <p class="des">{{product.price}}€</p>
+        <a class="btn-panier" href="">Ajouter au Panier</a>
+    </div>
+  </div>
+</div>
     
-    
-    <div class="card-container">
-            
-            <div class="card">
-              
-              <div class="image-card">
-
-              </div>
-
-              <div class="text-container-card">
-                
-                <h3>Boucles d'oreilles</h3>
-                <p> Description du bijou</p>
-                <div class="price">
-                  <p class="des">100e</p>
-                  <a class="btn-panier" href="./details.html">Ajouter au Panier</a>
-              </div>
-
-            </div>
-              
-            <div>
-
-            </div>
-            </div>
-            <div class="card">
-              <div class="image-card">
-
-              </div>
-              <div class="text-container-card">
-                <h3>Boucles d'oreilles</h3>
-                <p> Description du bijou</p>
-                <div class="price">
-                  <p class="des">100e</p>
-                  <a class="btn-panier" href="./details.html">Ajouter au Panier</a>
-                </div>
-              </div>
-              <div>
-
-              </div>
-            </div>
-            <div class="card">
-              <div class="image-card">
-
-              </div>
-              <div class="text-container-card">
-                <h3>Boucles d'oreilles</h3>
-                <p> Description du bijou</p>
-                <div class="price">
-                  <p class="des">100e</p>
-                  <a class="btn-panier" href="../Payement/index.html">Ajouter au Panier</a>
-                </div>
-              </div>
-              <div>
-
-              </div>
-            </div>
-            <div class="card">
-              <div class="image-card">
-
-              </div>
-              
-              <div class="text-container-card">
-                <h3>Boucles d'oreilles</h3>
-                <p> Description du bijou</p>
-                <div class="price">
-                  <p class="des">100e</p>
-                  <a class="btn-panier" href="../Payement/index.html">Ajouter au Panier</a>
-                </div>
-              </div>
-              <div>
-
-              </div>
-            </div>
-            <div class="card">
-              <div class="image-card">
-
-              </div>
-              <div class="text-container-card">
-                <h3>Boucles d'oreilles</h3>
-                <p> Description du bijou</p>
-                <div class="price">
-                  <p class="des">100e</p>
-                  <a class="btn-panier" href="../Payement/index.html">Ajouter au Panier</a>
-                </div>
-              </div>
-              <div>
-
-              </div>
-            </div>
-            <div class="card">
-              <div class="image-card">
-
-              </div>
-              <div class="text-container-card">
-                <h3>Boucles d'oreilles</h3>
-                <p> Description du bijou</p>
-                <div class="price">
-                  <p class="des">100e</p>
-                  <a class="btn-panier" href="../Payement/index.html">Ajouter au Panier</a>
-                </div>
-              </div>
-              <div>
-
-              </div>
-            </div>
-          </div>
-    
-    
-     {% endblock %}
-</body>

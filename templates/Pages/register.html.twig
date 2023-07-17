@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+{% block body %}
+<!-- MENU -->
+{% include 'menu.html.twig' with {'user': user} %}¨
+
+
+{% include 'form.html.twig' with {
+    'formAction': '/register',
+    'formMethod': 'POST',
+    'isRegistrationPage': true
+} %}
+
+<!-- FOOTER -->
+{% include 'footer.html.twig' %}
+{% endblock %}

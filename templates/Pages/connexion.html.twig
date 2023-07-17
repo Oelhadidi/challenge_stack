@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+{% block body %}
+
+ {% if user %}
+    <h2>Bienvenue {{ user.firstname}}</h2>
+{% else %}
+    <h2>Connectez vous avec votre adresse mail</h2>
+{% endif %}
+    {% include 'form.html.twig' with {
+    'formAction': '/login',
+    'formMethod': 'POST',
+    'isRegistrationPage': false
+} %}
+{% endblock %}

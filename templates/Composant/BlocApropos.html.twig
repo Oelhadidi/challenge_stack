@@ -1,26 +1,17 @@
-{% extends 'base.html.twig' %}
-
-<body>
-    {% block body %}
-    
-
 <div class="about">
-        <div class="about-container">
-            <p class="signature">Emma </br> <span>Paris</span></p>
-            <!-- Image -->
-            <div class="text-container">
-                <div class="box-image-container">
-                    <div class="under-box-image"></div>
-                    <div class="box-image"></div>
-                </div>
-                <div class="text">
-                    <h2>{% block titreàpropos %}Acceuil{% endblock %}</h2>
-                    <p class="paragraphe"> <h2>{% block Descriptionàpropos %}Description{% endblock %}</h2> </p> 
-                    <a class="btn" href="#">Voir plus</a>
-                </div>
+    <div class="about-container">
+        <p class="signature">Emma </br> <span>Paris</span></p>
+        <!-- Image -->
+        <div class="text-container">
+            <div class="box-image-container">
+                <div class="under-box-image" style="background-image: url('{{background }}')"></div>
+                <div class="box-image"></div>
+            </div>
+            <div class="text">
+                <h2>{{title}}</h2>
+                <p class="paragraphe">{{description}}</h2> </p> 
+                <a class="btn" href="#">Voir plus</a>
             </div>
         </div>
     </div>
-
-     {% endblock %}
-</body>
+</div>
