@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+<body>
+    {% block body %}
+    
+    
+    
+    <div class="header">
+        <div class="header-top">
+            <div class="header-top-container">
+                <!-- Searchbar -->
+                <i class="bi bi-search"></i>
+                <input class="searchbar" type="text" placeholder="rechercher..."/>
+                <a href="#">
+                    <img class="logo" src="./images/logo.png" alt="logo" />
+                </a>
+                <!-- User action -->
+                <div class="user-action">
+                    <a class="user-action-link connexion" href="#">
+                        <i class="bi bi-person"></i>
+                        Connexion
+                    </a> 
+                    <a class="user-action-link" href="#">
+                        <i class="bi bi-heart"></i>
+                    </a> 
+                    <a class="user-action-link" href="./paiement.html">
+                        <i class="bi bi-cart"></i>
+                    </a> 
+                </div>
+                 <!-- Menu burger -->
+                 <i class="bi bi-list"></i>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <ul class="nav-link">
+                <li class="link">
+                    <a href="./Présentation.html">Présentation</a>
+                </li>
+                <li class="link">
+                    <a href="./page blog seo.html">Blog</a>
+                </li>
+                <li class="link">
+                    <a href="./boutique.html">Shop</a>
+                </li>
+                <li class="link">
+                    <a href="./page contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+     {% endblock %}
+</body>
