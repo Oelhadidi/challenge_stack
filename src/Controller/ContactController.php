@@ -3,18 +3,15 @@
 namespace App\Controller;
 
 use App\Routing\Attribute\Route;
+use \Exception;
 
-class ContactController
+class ContactController extends AbstractController
 {
-  #[Route("/contact", name: "contact_page")]
+  #[Route("/", name: "contactpage")]
   public function contact()
   {
-    echo "Page de contact";
+         // Rediriger vers la page de contact
+         return $this->twig->render('contact.html.twig',['page contact']);
   }
 
-  #[Route("/devis", name: "page_devis")]
-  public function devis()
-  {
-    echo "Page de devis";
-  }
 }
