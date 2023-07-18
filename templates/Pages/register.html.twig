@@ -6,8 +6,8 @@
 {% include 'Composant/menu.html.twig' with {'user': user} %}¨
 
 
-{% include 'form.html.twig' with {
-    'formAction': '/register',
+{% include 'Composant/formulaires.html.twig' with {
+    'formAction': '/inscription',
     'formMethod': 'POST',
     'isRegistrationPage': true
 } %}

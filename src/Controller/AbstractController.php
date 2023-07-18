@@ -3,9 +3,9 @@
 namespace App\Controller;
 
 use PDO;
+use App\Utils\AuthToken;
 use Twig\Environment;
 
-use App\Utils\AuthToken;
 abstract class AbstractController
 {
   public function __construct(
@@ -14,24 +14,24 @@ abstract class AbstractController
   ) {
   }
 
-  // GET USER INFO BY ID
-  public function getUserById($id, $db)
-  {
-      $statement = "SELECT * FROM utilisateur WHERE id = :id";
-      $stmt = $db->prepare($statement);
-      $stmt->execute(['id' => $id]);
-      $user = $stmt->fetch(PDO::FETCH_ASSOC);
+function obtenirIdUtilisateur($email, $MDP) {
+    $statement = "SELECT id FROM utilisateur WHERE email = :email, mdp = :MDP";
+    $stmt = $this->db->prepare($statement);
+    $stmt->execute(['email' => $email, 'MDP' => $MDP]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-      return $user;
-  }
+    return $user;
+}
 
   // CHECK IF USER IS LOGGED IN
-  public function isLoggedin($db)
+public function isLoggedin($MDP, $email)
 {
   if (isset($_COOKIE['authToken'])) {
       $token = $_COOKIE['authToken'];
-      $userId = AuthToken::getUserFromToken($token);
-      $user = $this->getUserById($userId, $db);
+      $authToken = new AuthToken($MDP, $email);
+      $userId = $authToken->obtenirIdUtilisateurParToken($token); 
+
+      $user = $this->obtenirIdUtilisateur($email, $MDP);
 
       if ($user) {
           return $user;
@@ -40,4 +40,5 @@ abstract class AbstractController
 
   return null;
 }
+
 }

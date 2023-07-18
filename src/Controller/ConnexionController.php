@@ -39,25 +39,30 @@ class ConnexionController extends AbstractController
               exit();
           } else {
               // Générer un token
-              $token = AuthToken::generateToken($user['id']);
-              $isTokenValid = AuthToken::verifyToken($token);
+              // Générer un token
+              $authToken = new AuthToken($user['email'], $user['MDP']);
+              $token = $authToken->genererTokenAuthentification($user['email'], $user['MDP']);
+              // Vérifier le token 
+              $isValidToken = $authToken->verifierTokenAuthentification($token);
+              var_dump($isValidToken);
               $user['token'] = $token;
 
-              if (!$isTokenValid) {
+              if (!$isValidToken) {
                   // Rediriger vers la page de connexion
                   echo "<h3>Token invalide</h3>";
-                  return $this->twig->render('connect/login.html.twig', ['token is not valid']);
+                  var_dump('its not working');
+                  return $this->twig->render('Pages/connexion.html.twig', ['token is not valid']);
               }
               // Stocker le token dans un cookie
               setcookie('authToken', $user['token'], time() + 3600, '/');
 
               // Vérifier si le cookie authToken existe
-              $user = $this->isLoggedin($this->db);
+              $user = $this->isLoggedin($user['email'], $user['MDP']);
 
               if ($user) {
-                  return $this->twig->render('connect/login.html.twig',['user' => $user]);
+                  return $this->twig->render('Pages/index.html.twig',['user' => $user]);
               } else {
-                  header('Location: /login');
+                  header('Location: /connexion');
                   exit();
               }
           }
@@ -72,5 +77,7 @@ class ConnexionController extends AbstractController
       setcookie('authToken', '', time() - 3600, '/');
       // Rediriger vers la page de connexion ou afficher un message de déconnexion réussie
   }
+
+
 
 }

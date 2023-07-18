@@ -45,7 +45,7 @@ class __TwigTemplate_17b583d6d47a71de69cfa0ea07efc728 extends Template
   </div>
   <div>
     <label for=\"password\">Password</label>
-    <input type=\"password\" id=\"password\" name=\"password\" required>
+    <input type=\"password\" id=\"password\" name=\"MDP\" required>
   </div>
 
   ";
@@ -53,16 +53,12 @@ class __TwigTemplate_17b583d6d47a71de69cfa0ea07efc728 extends Template
         if (($context["isRegistrationPage"] ?? null)) {
             // line 12
             echo "    <div>
-      <label for=\"firstName\">First Name</label>
-      <input type=\"text\" id=\"firstName\" name=\"firstName\" required>
-    </div>
-    <div>
-      <label for=\"lastName\">Last Name</label>
-      <input type=\"text\" id=\"lastName\" name=\"lastName\" required>
+      <label for=\"nom\">Nom</label>
+      <input type=\"text\" id=\"nom\" name=\"nom\" required>
     </div>
   ";
         }
-        // line 21
+        // line 17
         echo "
   <button type=\"submit\">Submit</button>
 </form>
@@ -81,7 +77,7 @@ class __TwigTemplate_17b583d6d47a71de69cfa0ea07efc728 extends Template
 
     public function getDebugInfo()
     {
-        return array (  66 => 21,  55 => 12,  53 => 11,  37 => 1,);
+        return array (  62 => 17,  55 => 12,  53 => 11,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -93,17 +89,13 @@ class __TwigTemplate_17b583d6d47a71de69cfa0ea07efc728 extends Template
   </div>
   <div>
     <label for=\"password\">Password</label>
-    <input type=\"password\" id=\"password\" name=\"password\" required>
+    <input type=\"password\" id=\"password\" name=\"MDP\" required>
   </div>
 
   {% if isRegistrationPage %}
     <div>
-      <label for=\"firstName\">First Name</label>
-      <input type=\"text\" id=\"firstName\" name=\"firstName\" required>
-    </div>
-    <div>
-      <label for=\"lastName\">Last Name</label>
-      <input type=\"text\" id=\"lastName\" name=\"lastName\" required>
+      <label for=\"nom\">Nom</label>
+      <input type=\"text\" id=\"nom\" name=\"nom\" required>
     </div>
   {% endif %}
 

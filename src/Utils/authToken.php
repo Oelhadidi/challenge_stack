@@ -1,73 +1,67 @@
 <?php
 
+
 namespace App\Utils;
+
+use PDO;
+use App\Controller\AbstractController;
 use Firebase\JWT\JWT;
 use \Exception;
 
-class AuthToken
+class AuthToken extends AbstractController
 {
 
   // GENERATE TOKEN
-  public static function generateToken($userId)
-  {
-     //$token = bin2hex(random_bytes($length));
-         //return $token;
-         // Clé secrète pour signer le token
-         $secretKey = $_ENV['JWT_SECRET_KEY'];
+    public function genererTokenAuthentification($email, $MDP) {
+        $idUtilisateur = $this->obtenirIdUtilisateur($email, $MDP); // Obtenez l'ID de l'utilisateur à partir de la base de données
+        if ($idUtilisateur !== false) {
+            $payload = array(
+                'idUtilisateur' => $idUtilisateur,
+                'expiration' => time() + 3600 // Exemple : expiration après 1 heure
+            );
+            $token = base64_encode(json_encode($payload));
+            return $token;
+        }
+        return false; // Échec de l'authentification
+    }
 
-         // Données du payload
-         $payload = [
-             'iss' => 'movie-app',
-             'aud' => 'myapp',
-             'sub' => $userId,
-             'exp' => time() + 3600, 
-             'iat' => time(), 
-         ];
- 
-         // Génération du token
-         $token = JWT::encode($payload, $secretKey, 'HS256');
- 
-         // Affichage du token
-         return $token;
-  }
+    // Fonction pour vérifier la validité du token d'authentification
+    public function verifierTokenAuthentification($token) {
+        $payload = json_decode(base64_decode($token), true);
+        if ($payload && isset($payload['idUtilisateur']) && isset($payload['expiration'])) {
+            if ($payload['expiration'] >= time()) {
+                $idUtilisateur = $this->obtenirIdUtilisateurParToken($token); // Obtenez l'ID de l'utilisateur à partir de la base de données en utilisant le token
+                if ($idUtilisateur !== false && $idUtilisateur == $payload['idUtilisateur']) {
+                    return true; // Token d'authentification valide
+                }
+            }
+        }
+        return false; // Token d'authentification invalide
+    }
 
-  // VERIFY TOKEN
-  public static function verifyToken($token)
-  {
-      try {
-          // Récupérer la clé secrète
-          $secretKey = $_ENV['JWT_SECRET_KEY'];
 
-          // Créer les en-têtes du token
-          $headers = new \stdClass();
-          $headers->alg = 'HS256';
-          $headers->typ = 'JWT';
 
-          // Décoder le token en utilisant la clé secrète
-          $decodedToken = JWT::decode($token, $secretKey, $headers);
+    public function obtenirIdUtilisateurParToken($token) {
+        // Décoder le token pour obtenir le payload
+        $payload = json_decode(base64_decode($token), true);
 
-          // Accéder aux claims du token
-          $userId = $decodedToken->sub;
-          $expirationTime = $decodedToken->exp;
+        if ($payload && isset($payload['idUtilisateur'])) {
+            $idUtilisateur = $payload['idUtilisateur'];
 
-          // Token valide
-          return true;
-      } catch (Exception $e) {
-          // Gérer les erreurs de token (par exemple, token invalide, expiré, etc.)
-          return false;
-      }
-  }
+            // Effectuer une requête à la base de données pour vérifier si l'ID de l'utilisateur existe
+            $statement = "SELECT id FROM utilisateur WHERE id = :idUtilisateur";
+            $stmt = $this->db->prepare($statement);
+            $stmt->execute(['idUtilisateur' => $idUtilisateur]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-   // GET USER FROM TOKEN 
-   public static function getUserFromToken($token)
-   {
-       $secretKey = $_ENV['JWT_SECRET_KEY'];
-       $decodedToken = JWT::decode($token, $secretKey, $headers);
-       $userId = $decodedToken->sub;
-   
-       return $userId;
+            if ($user) {
+                return $idUtilisateur; // Retourner l'ID de l'utilisateur s'il existe
+            }
+        }
 
-   }
+        return false; // Retourner false si l'ID de l'utilisateur n'existe pas ou si le token est invalide
+    }
+
    
 
 }

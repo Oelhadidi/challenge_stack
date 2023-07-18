@@ -71,7 +71,7 @@ class __TwigTemplate_682b7b9affd04c1af0d3f35a46790cf2 extends Template
         }
         // line 11
         echo "    ";
-        $this->loadTemplate("Composant/formulaires.html.twig", "/Pages/connexion.html.twig", 11)->display(twig_array_merge($context, ["formAction" => "/login", "formMethod" => "POST", "isRegistrationPage" => false]));
+        $this->loadTemplate("Composant/formulaires.html.twig", "/Pages/connexion.html.twig", 11)->display(twig_array_merge($context, ["formAction" => "/connexion", "formMethod" => "POST", "isRegistrationPage" => false]));
     }
 
     public function getTemplateName()
@@ -102,7 +102,7 @@ class __TwigTemplate_682b7b9affd04c1af0d3f35a46790cf2 extends Template
     <h2>Connectez vous avec votre adresse mail</h2>
 {% endif %}
     {% include 'Composant/formulaires.html.twig' with {
-    'formAction': '/login',
+    'formAction': '/connexion',
     'formMethod': 'POST',
     'isRegistrationPage': false
 } %}
