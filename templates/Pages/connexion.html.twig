@@ -8,7 +8,7 @@
 {% else %}
     <h2>Connectez vous avec votre adresse mail</h2>
 {% endif %}
-    {% include 'form.html.twig' with {
+    {% include 'Composant/formulaires.html.twig' with {
     'formAction': '/login',
     'formMethod': 'POST',
     'isRegistrationPage': false

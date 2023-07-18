@@ -10,12 +10,19 @@ if (
 
 
 // Importing the dotenv package
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ .'/../vendor/autoload.php';
+
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Symfony\Component\Dotenv\Dotenv;
 use App\Controller\ContactController;
+use App\Controller\LoginController;
+use App\Controller\InscriptionController;
+use App\Controller\Controller;
 use App\Controller\IndexController;
+use App\Controller\BoutiqueController;
+use App\Controller\BlogController;
+use App\Controller\AproposController;
 use App\DependencyInjection\Container;
 use App\Routing\RouteNotFoundException;
 use App\Routing\Router;
@@ -38,7 +45,6 @@ $dotenv->loadEnv(__DIR__ . '/../.env');
   
   try {
     $pdo = new PDO($dsn, $user, $password);
-    var_dump($pdo);
   } catch (PDOException $ex) {
     echo "Erreur lors de la connexion à la base de données : " . $ex->getMessage();
     exit;
