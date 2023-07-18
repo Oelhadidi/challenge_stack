@@ -3,7 +3,7 @@
 {% block title %}Blog{% endblock %}
 {% block body %} 
     <!-- Menu -->
-    {% include 'menu.html.twig' with {'user': user} %}
+    {% include 'Composant/menu.html.twig' with {'user': user} %}
 
     <!-- Banner -->
     {% include 'banner.html.twig' with {
@@ -24,6 +24,6 @@
     </div>
 
     <!-- Footer -->
-    {% include 'footer.html.twig' %}
+    {% include 'Composant/footer.html.twig' %}
 
 {% endblock %}

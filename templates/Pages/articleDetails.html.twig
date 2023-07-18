@@ -3,7 +3,7 @@
 {% block title %}{{article.name}}{% endblock %}
 {% block body %}
     <!-- MENU -->
-    {% include 'menu.html.twig' with {'user': user} %}
+    {% include 'Composant/menu.html.twig' with {'user': user} %}
 
     <!-- CONTENT -->
     <h1>{{article.name}}</h1>
@@ -14,6 +14,6 @@
 
 
     <!-- Footer -->
-    {% include 'footer.html.twig' %}
+    {% include 'Composant/footer.html.twig' %}
 
 {% endblock %}

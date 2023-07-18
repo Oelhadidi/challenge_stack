@@ -3,7 +3,7 @@
 {% block title %}Boutique{% endblock %}
 {% block body %} 
     <!-- Menu -->
-    {% include 'menu.html.twig' with {'user': user} %}
+    {% include 'Composant/menu.html.twig' with {'user': user} %}
 
     <!-- Content -->
     <main>
@@ -93,7 +93,7 @@
         <div class="pagination">
             <p class="pagination-title">Page</p>
             <ul class="pagination-container">
-              <li><<</li>
+              <li></li>
               <li>
                 <a href="#">1</a>
               </li>
@@ -117,5 +117,5 @@
     </main>
     
     <!-- Footer -->
-    {% include 'footer.html.twig' %}
+    {% include 'Composant/footer.html.twig' %}
 {% endblock %}

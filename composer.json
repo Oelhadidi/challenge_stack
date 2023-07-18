@@ -12,6 +12,12 @@
             "email": "frederic.zai@gmail.com"
         }
     ],
+    "scripts": {
+        "start": "php -S localhost:8000 -t public/ public/index.php"
+      },
+    "config": {
+        "process-timeout": 0
+    },
     "require": {
         "symfony/dotenv": "^6.2",
         "twig/twig": "^3.6",

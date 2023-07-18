@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Controller;
+
+use App\Routing\Attribute\Route;
+use \Exception;
+
+class ConnexionController extends AbstractController
+{
+  #[Route("/connexion", name: "connexionpage")]
+  public function connexion()
+  {
+         // Rediriger vers la page de login
+         return $this->twig->render('/Pages/connexion.html.twig',['page de connexion']);
+  }
+
+}

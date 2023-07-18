@@ -3,7 +3,7 @@
 {% block title %}A propos {% endblock %}
 {% block body %}
     <!-- MENU -->
-    {% include 'menu.html.twig' with {'user': user} %}
+    {% include 'Composant/menu.html.twig' with {'user': user} %}
 
     <!-- CONTENT -->
     <div class="about-presentation">
@@ -45,6 +45,6 @@
 
 
     <!-- Footer -->
-    {% include 'footer.html.twig' %}
+    {% include 'Composant/footer.html.twig' %}
 
 {% endblock %}

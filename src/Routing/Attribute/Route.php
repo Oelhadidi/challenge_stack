@@ -10,7 +10,7 @@ class Route
   public function __construct(
     private string $path,
     private string $name = "default_name",
-    private string $httpMethod = ""
+    private string $httpMethod = "GET"
   ) {
   }
 

@@ -3,7 +3,7 @@
 {% block title %}Inscription{% endblock %}
 {% block body %}
 <!-- MENU -->
-{% include 'menu.html.twig' with {'user': user} %}¨
+{% include 'Composant/menu.html.twig' with {'user': user} %}¨
 
 
 {% include 'form.html.twig' with {
@@ -13,5 +13,5 @@
 } %}
 
 <!-- FOOTER -->
-{% include 'footer.html.twig' %}
+{% include 'Composant/footer.html.twig' %}
 {% endblock %}

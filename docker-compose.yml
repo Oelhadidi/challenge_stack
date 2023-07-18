@@ -1,0 +1,19 @@
+version: "3"
+services:
+  db:
+    container_name: mysql_playground_db
+    image: mysql:latest
+    restart: always
+    env_file:
+      - ./.env
+    ports:
+      - "3640:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+  pma:
+    container_name: mysql_playground_pma
+    image: phpmyadmin:latest
+    ports:
+      - "8895:80"
+    links:
+      - db

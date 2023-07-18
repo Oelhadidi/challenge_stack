@@ -3,7 +3,7 @@
 {% block title %}{{product.name}}{% endblock %}
 {% block body %}
     <!-- MENU -->
-    {% include 'menu.html.twig' with {'user': user} %}
+    {% include 'Composant/menu.html.twig' with {'user': user} %}
 
     <!-- CONTENT -->
     <main>
@@ -93,6 +93,6 @@
  
      </main>
     <!-- Footer -->
-    {% include 'footer.html.twig' %}
+    {% include 'Composant/footer.html.twig' %}
 
 {% endblock %}

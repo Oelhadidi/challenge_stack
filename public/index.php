@@ -15,12 +15,14 @@ use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Symfony\Component\Dotenv\Dotenv;
 use App\Controller\ContactController;
+use App\Controller\IndexController;
 use App\DependencyInjection\Container;
 use App\Routing\RouteNotFoundException;
 use App\Routing\Router;
-use Symfony\Component\Dotenv\Dotenv;
-use Twig\Loader\FilesystemLoader;
+use App\Routing\Attribute\Route;
 
+$dotenv = new Dotenv();
+$dotenv->loadEnv(__DIR__ . '/../.env');
 
 // DB
 [
@@ -28,8 +30,8 @@ use Twig\Loader\FilesystemLoader;
     'DB_PORT'     => $port,
     'DB_NAME'     => $dbname,
     'DB_CHARSET'  => $charset,
-    'DB_USER'     => $user,
-    'DB_PASSWORD' => $password
+    'MYSQL_USERNAME'     => $user,
+    'MYSQL_ROOT_PASSWORD' => $password
   ] = $_ENV;
   
   $dsn = "mysql:dbname=$dbname;host=$host:$port;charset=$charset";
