@@ -1,0 +1,108 @@
+/* ============= BLOG ============ */
+@media all and (min-width: 1150px){
+    .banner-blog{
+        width: 100vw;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url("../images/blog_photo.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .banner-blog .signature-blog{
+        position: absolute;
+        left: 20px;
+        top: 40px;
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        width: fit-content;
+        color: #FFFFFF;
+    }
+    .banner-blog .signature-blog span{
+        font-family: 'Jost';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 29px;
+            text-align: center;
+            text-transform: uppercase;
+    
+            color: #FFFFFF;
+    }
+    .banner-blog h1{
+        text-transform: uppercase;
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 72px;
+        text-align: center;
+        color: #FFFFFF;
+    
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+}
+@media all and (max-width: 1150px) and (min-width: 740px){
+    .banner-blog{
+        width: 100vw;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url("../images/blog_photo.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        margin-top: 140px;
+    }
+    
+    .banner-blog .signature-blog{
+        position: absolute;
+        left: 20px;
+        top: 40px;
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        width: fit-content;
+        color: #FFFFFF;
+    }
+    .banner-blog .signature-blog span{
+        font-family: 'Jost';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 29px;
+            text-align: center;
+            text-transform: uppercase;
+    
+            color: #FFFFFF;
+    }
+    .banner-blog h1{
+        text-transform: uppercase;
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 50px;
+        line-height: 72px;
+        text-align: center;
+        color: #FFFFFF;
+    
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+}

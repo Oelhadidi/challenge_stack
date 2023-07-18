@@ -1,0 +1,328 @@
+/* ============= ABOUT ============ */
+@media all and (min-width: 1150px){
+    .about-presentation{
+        width: 100vw;
+        height: auto;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        background-color: #ffffff;
+        position: relative;
+        overflow: hidden;
+    }
+    .about-presentation img{
+        position: absolute;
+        z-index: 2;
+        margin-top: 200px;
+    }
+    .about-presentation .about-presentation-container{
+        padding-top: 80px;
+        padding-bottom: 80px;
+        width: 80%;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+    .about-presentation .about-presentation-container .presentation-text-container{
+            display: flex;
+            column-gap: 20px;
+    }
+        .about-presentation .about-presentation-container .presentation-text-container .box-image-container{
+            width: 50%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .about-presentation .about-presentation-container .presentation-text-container .box-image-container .box-image{
+            width: 450px;
+            height: 489px;
+            background: url("../images/WhatsApp Image 2023-03-08 at 20.16.07 (1).jpeg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            border: 6px solid #FFFFFF;
+            border-radius: 308.5px 0px 308.5px 308.5px;
+            z-index: 2;
+        }
+        .about-presentation .about-presentation-container .presentation-text-container .box-image-container .under-box-image{
+            width: 381.91px;
+            height: 373.44px;
+            border-radius: 0px 349px;
+            background: #F7F7F7;
+            transform: rotate(-2.16deg);
+            z-index:0;
+            position: absolute;
+            margin-right: 282px;
+        }
+        .about-presentation .about-presentation-container .presentation-text-container .text{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+        }
+        .about-presentation .about-presentation-container .presentation-text-container .text h2{
+            text-transform: uppercase;
+            color: #DAA379;
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 45px;
+        }
+        .about-presentation .about-presentation-container .presentation-text-container .text .paragraphe{
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 29px;
+            letter-spacing: 0.005em;
+            color: #C5C5C5;
+        }
+        .about-presentation .about-presentation-container .presentation-text-container .text .btn{
+            box-sizing: border-box;
+            /* Auto layout */
+            padding: 10px 29px;
+            width: fit-content;
+            border: 2px solid #8D8D8D;
+            backdrop-filter: blur(30px);
+            border-radius: 24.5px;
+            text-decoration: none;
+            color: #8D8D8D;
+        }
+        .about-presentation .about-presentation-container .presentation-text-container .text .btn:hover{
+            box-sizing: border-box;
+            /* Auto layout */
+            padding: 10px 29px;
+            width: fit-content;
+            border: 2px solid #F0E5D3;
+            backdrop-filter: blur(30px);
+            border-radius: 24.5px;
+            text-decoration: none;
+            color: #F0E5D3;
+        }
+    
+        .reverse{
+            flex-direction: row-reverse;
+        }
+    
+        .reverse .reverse-box-image{
+            background-image: url("../images/pexels-alexey-demidov-9900763.jpg") !important;
+        }
+}
+@media all and (max-width: 1150px) and (min-width: 740px){
+/* ============= ABOUT ============ */
+.about-presentation{
+    width: 100vw;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    margin-top: 134px;
+}
+.about-presentation img{
+    display: none;
+}
+
+.about-presentation .about-presentation-container{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    row-gap: 40px;
+}
+.about-presentation .about-presentation-container  .presentation-text-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 60px;
+}
+    .about-presentation .about-presentation-container  .presentation-text-container .box-image-container{
+        /*width: 50%;*/
+        /*height: 100%;*/
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .about-presentation .about-presentation-container  .presentation-text-container .box-image-container .box-image{
+        width: 450px;
+        height: 489px;
+        background: url("../images/WhatsApp Image 2023-03-08 at 20.16.07 (1).jpeg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border: 6px solid #FFFFFF;
+        border-radius: 308.5px 0px 308.5px 308.5px;
+        z-index: 2;
+    }
+    .about-presentation .about-presentation-container  .presentation-text-container .box-image-container .under-box-image{
+        width: 381.91px;
+        height: 373.44px;
+        border-radius: 0px 349px;
+        background: #F7F7F7;
+        transform: rotate(-2.16deg);
+        z-index:0;
+        position: absolute;
+        margin-right: 282px;
+    }
+    .about-presentation .about-presentation-container  .presentation-text-container .text{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+    }
+    .about-presentation .about-presentation-container  .presentation-text-container .text h2{
+        text-transform: uppercase;
+        color: #DAA379;
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 45px;
+    }
+    .about-presentation .about-presentation-container  .presentation-text-container .text .paragraphe{
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 29px;
+        letter-spacing: 0.005em;
+        color: #C5C5C5;
+    }
+    .about-presentation .about-presentation-container  .presentation-text-container .text .btn{
+        box-sizing: border-box;
+        /* Auto layout */
+        padding: 10px 29px;
+        width: fit-content;
+        border: 2px solid #8D8D8D;
+        backdrop-filter: blur(30px);
+        border-radius: 24.5px;
+        text-decoration: none;
+        color: #C5C5C5;
+    }
+    .about-presentation .about-presentation-container  .presentation-text-container .text .btn:hover{
+        box-sizing: border-box;
+        /* Auto layout */
+        padding: 10px 29px;
+        width: fit-content;
+        border: 2px solid #F0E5D3;
+        backdrop-filter: blur(30px);
+        border-radius: 24.5px;
+        text-decoration: none;
+        color: #F0E5D3;
+    }
+    .reverse .reverse-box-image{
+        background-image: url("../images/pexels-alexey-demidov-9900763.jpg") !important;
+    }
+}
+
+@media all and (max-width: 740px){
+    .about-presentation {
+        width: 100vw;
+        height: auto;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        background-color: #ffffff;
+        margin-top: 137px;
+    }
+    .about-presentation img{
+        display: none;
+    }
+    .about-presentation  .about-presentation-container{
+        padding-top: 80px;
+        padding-bottom: 80px;
+        width: 80%;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+    .about-presentation  .about-presentation-container .presentation-text-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 60px;
+    }
+        .about-presentation  .about-presentation-container .presentation-text-container .box-image-container{
+            /*width: 50%;*/
+            /*height: 100%;*/
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .about-presentation  .about-presentation-container .presentation-text-container .box-image-container .box-image{
+            width: 250px;
+            height: 289px;
+            background-image: url("../images/about_photo.jpeg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            border: 6px solid #FFFFFF;
+            border-radius: 308.5px 0px 308.5px 308.5px;
+            z-index: 2;
+        }
+        .about-presentation  .about-presentation-container .presentation-text-container .box-image-container .under-box-image{
+            width: 181.91px;
+            height: 173.44px;
+            border-radius: 0px 349px;
+            background: #F7F7F7;
+            transform: rotate(-2.16deg);
+            z-index: 0;
+            position: absolute;
+            margin-right: 217px;
+        }
+        .about-presentation  .about-presentation-container .presentation-text-container .text{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+        }
+        .about-presentation  .about-presentation-container .presentation-text-container .text h2{
+            text-transform: uppercase;
+            color: #DAA379;
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 45px;
+        }
+        .about-presentation  .about-presentation-container .presentation-text-container .text .paragraphe{
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 29px;
+            letter-spacing: 0.005em;
+            color: #C5C5C5;
+        }
+        .about-presentation  .about-presentation-container .presentation-text-container.text .btn{
+            box-sizing: border-box;
+            /* Auto layout */
+            padding: 10px 29px;
+            width: fit-content;
+            border: 2px solid #8D8D8D;
+            backdrop-filter: blur(30px);
+            border-radius: 24.5px;
+            text-decoration: none;
+            color: #C5C5C5;
+        }
+        .about-presentation  .about-presentation-container .presentation-text-container.text .btn:hover{
+            box-sizing: border-box;
+            /* Auto layout */
+            padding: 10px 29px;
+            width: fit-content;
+            border: 2px solid #F0E5D3;
+            backdrop-filter: blur(30px);
+            border-radius: 24.5px;
+            text-decoration: none;
+            color: #F0E5D3;
+        }
+        .reverse .reverse-box-image{
+            background-image: url("../images/pexels-alexey-demidov-9900763.jpg") !important;
+        }
+}
