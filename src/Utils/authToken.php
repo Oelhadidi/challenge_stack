@@ -31,6 +31,7 @@ class AuthToken
     public function getIdFromToken($token){
         $decodedToken = JWT::decode($token, new Key($_ENV["JWT_SECRET_KEY"], "HS256"));
         $tokenUserId = $decodedToken-> id;
-        return $tokenUserId
+        return $tokenUserId;
     }
+
 }

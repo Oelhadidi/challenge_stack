@@ -27,9 +27,13 @@ use App\DependencyInjection\Container;
 use App\Routing\RouteNotFoundException;
 use App\Routing\Router;
 use App\Routing\Attribute\Route;
+use App\Utils\AuthToken;
 
 $dotenv = new Dotenv();
 $dotenv->loadEnv(__DIR__ . '/../.env');
+
+
+
 
 // DB
 [
@@ -50,6 +54,8 @@ $dotenv->loadEnv(__DIR__ . '/../.env');
     exit;
   }
   
+  $Authtoken = new AuthToken();
+
   // Twig
   $loader = new FilesystemLoader(__DIR__ . '/../templates/');
   $twig = new Environment($loader, [
@@ -60,7 +66,8 @@ $dotenv->loadEnv(__DIR__ . '/../.env');
   $serviceContainer = new Container();
   $serviceContainer
     ->set(Environment::class, $twig)
-    ->set(PDO::class, $pdo);
+    ->set(PDO::class, $pdo)
+    ->set(AuthToken::class, $Authtoken);
   
   // Appeler un routeur pour lui transférer la requête
   $router = new Router($serviceContainer);
