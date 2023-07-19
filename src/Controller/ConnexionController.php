@@ -40,43 +40,43 @@ class ConnexionController extends AbstractController
           } else {
               // Générer un token
               // Générer un token
-              $authToken = new AuthToken($user['email'], $user['MDP']);
-              $token = $authToken->genererTokenAuthentification($user['email'], $user['MDP']);
+              $authToken = new AuthToken();
+              $token = $authToken->generateAuthToken($user['id']);
               // Vérifier le token 
-              $isValidToken = $authToken->verifierTokenAuthentification($token);
-              var_dump($isValidToken);
-              $user['token'] = $token;
+                $isValidToken = $authToken->verificateAuthToken($token);
+                var_dump($isValidToken);
+                $user['token'] = $token;
 
-              if (!$isValidToken) {
-                  // Rediriger vers la page de connexion
-                  echo "<h3>Token invalide</h3>";
-                  var_dump('its not working');
-                  return $this->twig->render('Pages/connexion.html.twig', ['token is not valid']);
-              }
-              // Stocker le token dans un cookie
-              setcookie('authToken', $user['token'], time() + 3600, '/');
+            if (!$isValidToken) {
+               // Rediriger vers la page de connexion
+                    echo "<h3>Token invalide</h3>";
+                   var_dump('its not working');
+                   return $this->twig->render('Pages/connexion.html.twig', ['token is not valid']);
+               }
+            //   // Stocker le token dans un cookie
+               setcookie('authToken', $user['token'], time() + 3600, '/');
 
-              // Vérifier si le cookie authToken existe
-              $user = $this->isLoggedin($user['email'], $user['MDP']);
+            //   // Vérifier si le cookie authToken existe
+            //   $user = $this->isLoggedin($user['email'], $user['MDP']);
 
-              if ($user) {
-                  return $this->twig->render('Pages/index.html.twig',['user' => $user]);
-              } else {
-                  header('Location: /connexion');
-                  exit();
-              }
-          }
-      }
-  }
+            if ($user) {
+                   return $this->twig->render('Pages/index.html.twig',['user' => $user]);
+               } else {
+                   header('Location: /connexion');
+                   exit();
+               }
+            }
+        }
+    }
 
-  // LOGOUT USER 
-  #[Route("/api/logout", name: "logout_user", httpMethod: "GET")]
-  public function logout()
-  {
-      // Supprimer le cookie authToken en le réinitialisant avec une date d'expiration passée
-      setcookie('authToken', '', time() - 3600, '/');
-      // Rediriger vers la page de connexion ou afficher un message de déconnexion réussie
-  }
+//   // LOGOUT USER 
+//   #[Route("/api/logout", name: "logout_user", httpMethod: "GET")]
+//   public function logout()
+//   {
+//       // Supprimer le cookie authToken en le réinitialisant avec une date d'expiration passée
+//       setcookie('authToken', '', time() - 3600, '/');
+//       // Rediriger vers la page de connexion ou afficher un message de déconnexion réussie
+//   }
 
 
 

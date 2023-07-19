@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* Composant/menu.html.twig */
+/* /Composant/menu.html.twig */
 class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
 {
     private $source;
@@ -58,7 +58,7 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
             ";
         } else {
             // line 17
-            echo "                <a class=\"user-action-link connexion\" href=\"/login\">
+            echo "                <a class=\"user-action-link connexion\" href=\"/connexion\">
                     <i class=\"bi bi-person\"></i>
                     Connexion
                 </a>
@@ -96,7 +96,7 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
 
     public function getTemplateName()
     {
-        return "Composant/menu.html.twig";
+        return "/Composant/menu.html.twig";
     }
 
     public function isTraitable()
@@ -127,7 +127,7 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
                     {{ user.username }} (Déconnexion)
                 </a>
             {% else %}
-                <a class=\"user-action-link connexion\" href=\"/login\">
+                <a class=\"user-action-link connexion\" href=\"/connexion\">
                     <i class=\"bi bi-person\"></i>
                     Connexion
                 </a>
@@ -158,6 +158,6 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
     
     
     
-    ", "Composant/menu.html.twig", "C:\\Desktop\\CoursIW3\\challenge stack 2\\Challenge-stack-2-2022-2023\\templates\\Composant\\menu.html.twig");
+    ", "/Composant/menu.html.twig", "C:\\Desktop\\CoursIW3\\challenge stack 2\\Challenge-stack-2-2022-2023\\templates\\Composant\\menu.html.twig");
     }
 }

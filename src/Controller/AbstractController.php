@@ -15,7 +15,7 @@ abstract class AbstractController
   }
 
 function obtenirIdUtilisateur($email, $MDP) {
-    $statement = "SELECT id FROM utilisateur WHERE email = :email, mdp = :MDP";
+    $statement = "SELECT id, MDP FROM utilisateur WHERE email = :email";
     $stmt = $this->db->prepare($statement);
     $stmt->execute(['email' => $email, 'MDP' => $MDP]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -23,22 +23,22 @@ function obtenirIdUtilisateur($email, $MDP) {
     return $user;
 }
 
-  // CHECK IF USER IS LOGGED IN
-public function isLoggedin($MDP, $email)
-{
-  if (isset($_COOKIE['authToken'])) {
-      $token = $_COOKIE['authToken'];
-      $authToken = new AuthToken($MDP, $email);
-      $userId = $authToken->obtenirIdUtilisateurParToken($token); 
+//   // CHECK IF USER IS LOGGED IN
+ public function isLoggedin($MDP, $email)
+ {
+   if (isset($_COOKIE['authToken'])) {
+       $token = $_COOKIE['authToken'];
+       AuthToken
+       $userId = $authToken->getIdFromToken($token); 
 
-      $user = $this->obtenirIdUtilisateur($email, $MDP);
+       $user = $this->getIdFromToken($email, $MDP);
 
-      if ($user) {
-          return $user;
-      }
-  }
+       if ($user) {
+           return $user;
+       }
+   }
 
-  return null;
-}
+   return null;
+ }
 
 }
