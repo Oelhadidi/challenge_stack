@@ -3,17 +3,15 @@
 
 namespace App\Utils;
 
-use PDO;
-use App\Controller\AbstractController;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use \Exception;
 
 class AuthToken
 {
-    public function generateAuthToken($id)
+    public function generateAuthToken($id,$email)
     {
-        $payload = array("id" => $id, "expiration" => time() + 3600, "iat" => time());
+        $payload = array("id" => $id,"email"=> $email, "expiration" => time() + 3600, "iat" => time());
         $token = JWT::encode($payload, $_ENV["JWT_SECRET_KEY"], "HS256");
         return $token;
     }

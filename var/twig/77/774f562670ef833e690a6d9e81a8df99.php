@@ -46,7 +46,7 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
             <!-- User action -->
             ";
         // line 11
-        if (($context["user"] ?? null)) {
+        if (array_key_exists("user", $context)) {
             // line 12
             echo "                <a class=\"user-action-link connexion\" href=\"#\">
                     <i class=\"bi bi-person\"></i>
@@ -121,7 +121,7 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
                 <img class=\"logo\" src=\"./images/logo.png\" alt=\"logo\" />
             </a>
             <!-- User action -->
-            {% if user %}
+            {% if user is defined %}
                 <a class=\"user-action-link connexion\" href=\"#\">
                     <i class=\"bi bi-person\"></i>
                     {{ user.username }} (Déconnexion)

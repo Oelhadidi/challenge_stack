@@ -8,7 +8,7 @@
                 <img class="logo" src="./images/logo.png" alt="logo" />
             </a>
             <!-- User action -->
-            {% if user %}
+            {% if user is defined %}
                 <a class="user-action-link connexion" href="#">
                     <i class="bi bi-person"></i>
                     {{ user.username }} (Déconnexion)

@@ -19,6 +19,7 @@ use App\Controller\ContactController;
 use App\Controller\LoginController;
 use App\Controller\InscriptionController;
 use App\Controller\Controller;
+use App\Controller\AuthController;
 use App\Controller\IndexController;
 use App\Controller\BoutiqueController;
 use App\Controller\BlogController;
