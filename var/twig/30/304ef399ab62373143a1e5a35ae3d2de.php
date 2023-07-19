@@ -56,11 +56,9 @@ class __TwigTemplate_a37a9ec450fd54f3b47b0d715f1c5f41 extends Template
         $macros = $this->macros;
         // line 5
         echo "<!-- MENU -->
-";
-        // line 6
-        $this->loadTemplate("Composant/menu.html.twig", "/Pages/register.html.twig", 6)->display(twig_array_merge($context, ["user" => ($context["user"] ?? null)]));
-        echo "¨
-
+ ";
+        // line 7
+        echo "
 
 ";
         // line 9
@@ -69,8 +67,6 @@ class __TwigTemplate_a37a9ec450fd54f3b47b0d715f1c5f41 extends Template
         echo "
 <!-- FOOTER -->
 ";
-        // line 16
-        $this->loadTemplate("Composant/footer.html.twig", "/Pages/register.html.twig", 16)->display($context);
     }
 
     public function getTemplateName()
@@ -85,7 +81,7 @@ class __TwigTemplate_a37a9ec450fd54f3b47b0d715f1c5f41 extends Template
 
     public function getDebugInfo()
     {
-        return array (  73 => 16,  69 => 14,  67 => 9,  61 => 6,  58 => 5,  54 => 4,  47 => 3,  36 => 1,);
+        return array (  67 => 14,  65 => 9,  61 => 7,  58 => 5,  54 => 4,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -95,7 +91,7 @@ class __TwigTemplate_a37a9ec450fd54f3b47b0d715f1c5f41 extends Template
 {% block title %}Inscription{% endblock %}
 {% block body %}
 <!-- MENU -->
-{% include 'Composant/menu.html.twig' with {'user': user} %}¨
+ {# {% include 'Composant/menu.html.twig' with {'user': user} %}¨  #}
 
 
 {% include 'Composant/formulaires.html.twig' with {
@@ -105,7 +101,7 @@ class __TwigTemplate_a37a9ec450fd54f3b47b0d715f1c5f41 extends Template
 } %}
 
 <!-- FOOTER -->
-{% include 'Composant/footer.html.twig' %}
+{# {% include 'Composant/footer.html.twig' %} #}
 {% endblock %}", "/Pages/register.html.twig", "C:\\Desktop\\CoursIW3\\challenge stack 2\\Challenge-stack-2-2022-2023\\templates\\Pages\\register.html.twig");
     }
 }

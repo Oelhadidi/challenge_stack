@@ -1,3 +1,4 @@
+<a href ="/"><button type="button">Accueil</button></a>
 <form class="login-form" action="{{ formAction }}" method="{{ formMethod }}">
   <div>
     <label for="email">Email</label>
@@ -12,8 +13,13 @@
     <div>
       <label for="nom">Nom</label>
       <input type="text" id="nom" name="nom" required>
+      <a href="/connexion" id="lien">j'ai déjà un compte</a>
     </div>
   {% endif %}
 
+  {% if isRegistrationPage == false %}
+  <a href="/inscription" id="lien">créer un compte</a>
+  {% endif %}
+  
   <button type="submit">Submit</button>
 </form>
