@@ -19,7 +19,7 @@ class ConnexionController extends AbstractController
   }
 
   // LOGGIN USER
-  #[Route("/connexion", name: "login_user", httpMethod: "POST")]
+  #[Route("/connexion", name: "login_user", httpMethods: ["POST"])]
   public function userLoggin()
   {
       if ($_POST)
@@ -66,7 +66,7 @@ class ConnexionController extends AbstractController
     }
 
 //   // LOGOUT USER 
-  #[Route("/api/logout", name: "logout_user", httpMethod: "GET")]
+  #[Route("/api/logout", name: "logout_user", httpMethods: ["GET"])]
   public function logout()
   {
       $_SESSION['user'] = null;
