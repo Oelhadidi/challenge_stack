@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* /Composant/menu.html.twig */
+/* Composant/menu.html.twig */
 class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
 {
     private $source;
@@ -34,53 +34,65 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
     {
         $macros = $this->macros;
         // line 1
-        echo "<div class=\"header\">
+        echo "<link rel=\"stylesheet\" href=\"css/header.css\">
+<div class=\"header\">
     <div class=\"header-top\">
         <div class=\"header-top-container\">
             <!-- Searchbar -->
-            <i class=\"bi bi-search\"></i>
-            <input class=\"searchbar\" type=\"text\" placeholder=\"rechercher...\"/>
-            <a href=\"#\">
-                <img class=\"logo\" src=\"./images/logo.png\" alt=\"logo\" />
-            </a>
+            <div class=\"search-field\">
+                <img class=\"bi bi-search\" src=\"icones/Search.svg\"/>
+                <input class=\"searchbar title4\" type=\"text\" placeholder=\"rechercher...\"/>
+            </div>
+            <div>
+                <a href=\"#\">
+                    <img class=\"logo\" src=\"icones/Logo.svg\" alt=\"logo\" />
+                </a>
+            </div>
             <!-- User action -->
-            ";
-        // line 11
-        if (array_key_exists("user", $context)) {
-            // line 12
-            echo "                <a class=\"user-action-link connexion\" href=\"#\">
-                    <i class=\"bi bi-person\"></i>
-                    ";
-            // line 14
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "username", [], "any", false, false, false, 14), "html", null, true);
-            echo " (Déconnexion)
-                </a>
-            ";
+            <div class=\"nav-profile\">
+                ";
+        // line 17
+        if (twig_get_attribute($this->env, $this->source, ($context["user"] ?? null), "email", [], "array", true, true, false, 17)) {
+            // line 18
+            echo "                    <a class=\"user-action-link connexion\" href=\"/api/logout\">
+                        <i class=\"bi bi-person\"></i>
+                        ";
+            // line 21
+            echo "                        (Déconnexion)
+                    </a>
+                ";
         } else {
-            // line 17
-            echo "                <a class=\"user-action-link connexion\" href=\"/connexion\">
-                    <i class=\"bi bi-person\"></i>
-                    Connexion
-                </a>
-            ";
+            // line 24
+            echo "                    <a class=\"user-action-link connexion\" href=\"/connexion\">
+                        <i class=\"bi bi-person\"></i>
+                        Connexion
+                    </a>
+                ";
         }
-        // line 22
-        echo "            <!-- Menu burger -->
+        // line 29
+        echo "                <a href=\"#\">
+                    <img class=\"logo\" src=\"icones/User.svg\" alt=\"user\" />
+                </a>
+                <a href=\"#\">
+                    <img class=\"logo\" src=\"icones/Shopping cart.svg\" alt=\"user\" />
+                </a>
+            </div>
+            <!-- Menu burger -->
             <i class=\"bi bi-list\"></i>
         </div>
     </div>
     <div class=\"header-bottom\">
         <ul class=\"nav-link\">
-            <li class=\"link\">
+            <li class=\"link-navbar text16\">
                 <a href=\"/apropos\">Présentation</a>
             </li>
-            <li class=\"link\">
+            <li class=\"link-navbar text16\">
                 <a href=\"/blog\">Blog</a>
             </li>
-            <li class=\"link\">
+            <li class=\"link-navbar text16\">
                 <a href=\"/boutique\">Shop</a>
             </li>
-            <li class=\"link\">
+            <li class=\"link-navbar text16\">
                 <a href=\"/contact\">Contact</a>
             </li>
         </ul>
@@ -96,7 +108,7 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
 
     public function getTemplateName()
     {
-        return "/Composant/menu.html.twig";
+        return "Composant/menu.html.twig";
     }
 
     public function isTraitable()
@@ -106,48 +118,62 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
 
     public function getDebugInfo()
     {
-        return array (  68 => 22,  61 => 17,  55 => 14,  51 => 12,  49 => 11,  37 => 1,);
+        return array (  73 => 29,  66 => 24,  61 => 21,  57 => 18,  55 => 17,  37 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<div class=\"header\">
+        return new Source("<link rel=\"stylesheet\" href=\"css/header.css\">
+<div class=\"header\">
     <div class=\"header-top\">
         <div class=\"header-top-container\">
             <!-- Searchbar -->
-            <i class=\"bi bi-search\"></i>
-            <input class=\"searchbar\" type=\"text\" placeholder=\"rechercher...\"/>
-            <a href=\"#\">
-                <img class=\"logo\" src=\"./images/logo.png\" alt=\"logo\" />
-            </a>
+            <div class=\"search-field\">
+                <img class=\"bi bi-search\" src=\"icones/Search.svg\"/>
+                <input class=\"searchbar title4\" type=\"text\" placeholder=\"rechercher...\"/>
+            </div>
+            <div>
+                <a href=\"#\">
+                    <img class=\"logo\" src=\"icones/Logo.svg\" alt=\"logo\" />
+                </a>
+            </div>
             <!-- User action -->
-            {% if user is defined %}
-                <a class=\"user-action-link connexion\" href=\"#\">
-                    <i class=\"bi bi-person\"></i>
-                    {{ user.username }} (Déconnexion)
+            <div class=\"nav-profile\">
+                {% if user['email'] is defined %}
+                    <a class=\"user-action-link connexion\" href=\"/api/logout\">
+                        <i class=\"bi bi-person\"></i>
+                        {# {{ user['name'] }}  #}
+                        (Déconnexion)
+                    </a>
+                {% else %}
+                    <a class=\"user-action-link connexion\" href=\"/connexion\">
+                        <i class=\"bi bi-person\"></i>
+                        Connexion
+                    </a>
+                {% endif %}
+                <a href=\"#\">
+                    <img class=\"logo\" src=\"icones/User.svg\" alt=\"user\" />
                 </a>
-            {% else %}
-                <a class=\"user-action-link connexion\" href=\"/connexion\">
-                    <i class=\"bi bi-person\"></i>
-                    Connexion
+                <a href=\"#\">
+                    <img class=\"logo\" src=\"icones/Shopping cart.svg\" alt=\"user\" />
                 </a>
-            {% endif %}
+            </div>
             <!-- Menu burger -->
             <i class=\"bi bi-list\"></i>
         </div>
     </div>
     <div class=\"header-bottom\">
         <ul class=\"nav-link\">
-            <li class=\"link\">
+            <li class=\"link-navbar text16\">
                 <a href=\"/apropos\">Présentation</a>
             </li>
-            <li class=\"link\">
+            <li class=\"link-navbar text16\">
                 <a href=\"/blog\">Blog</a>
             </li>
-            <li class=\"link\">
+            <li class=\"link-navbar text16\">
                 <a href=\"/boutique\">Shop</a>
             </li>
-            <li class=\"link\">
+            <li class=\"link-navbar text16\">
                 <a href=\"/contact\">Contact</a>
             </li>
         </ul>
@@ -158,6 +184,6 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
     
     
     
-    ", "/Composant/menu.html.twig", "C:\\Desktop\\CoursIW3\\challenge stack 2\\Challenge-stack-2-2022-2023\\templates\\Composant\\menu.html.twig");
+    ", "Composant/menu.html.twig", "C:\\Desktop\\CoursIW3\\challenge stack 2\\Challenge-stack-2-2022-2023\\templates\\Composant\\menu.html.twig");
     }
 }

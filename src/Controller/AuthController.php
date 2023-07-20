@@ -9,8 +9,8 @@ class AuthController extends AbstractController
 
     function isLoggedIn(){
         try{
-            if($_COOKIE['token'])
-                return $this -> AuthToken->verificateAuthToken($_COOKIE['token']);
+            if($_SESSION['token'])
+                return $this -> AuthToken->verificateAuthToken($_SESSION['token']);
             else
                 return false;
         }

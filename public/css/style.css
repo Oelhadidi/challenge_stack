@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,400;1,500;1,600;1,700;1,800&display=swap');
 @import'./connexion.css';
 @import'./accueil.css';
 @import'./apropos.css';
@@ -6,3 +7,67 @@
 @import'./contact.css';
 @import'./footer.css';
 @import'./menu.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-grey: #8D8D8D;
+    --color-blue: #1D5F6B;
+    --color-Lbeige: #F0E5D3;
+    --color-Dbeige: #DAA379;
+    --color-white: #fff;
+    font-size: 10px;
+}
+
+.title1 {
+    font-family: "Jost";
+    font-weight: 700;
+    font-size: 6rem;
+}
+
+.title2 {
+    font-family: "Jost";
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+.title3 {
+    font-family: "Jost";
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.title4 {
+    font-family: "Jost";
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.text16 {
+    font-family: serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
+.text16ita {
+    font-family: serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.6rem;
+}
+
+.text14 {
+    font-family: serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.text10 {
+    font-family: serif;
+    font-weight: 400;
+    font-size: 1rem;
+}

@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="date"] {
+    padding: 5px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#id_article {
+    margin-right: 10px;
+}
+
+/* Ajouter un style pour les boutons "Supprimer" et "Modifier" */
+form:nth-of-type(2) input[type="submit"] {
+    background-color: #f44336;
+}
+
+form:nth-of-type(2) input[type="submit"]:hover {
+    background-color: #d32f2f;
+}

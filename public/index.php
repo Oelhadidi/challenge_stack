@@ -2,12 +2,12 @@
 
 if (
     php_sapi_name() !== 'cli' && // Environnement d'exécution != console
-    preg_match('/\.(ico|png|jpg|jpeg|css|js|gif)$/', $_SERVER['REQUEST_URI'])
+    preg_match('/\.(ico|png|jpg|jpeg|css|js|gif|svg)$/', $_SERVER['REQUEST_URI'])
   ) {
     return false;
   }
 
-
+session_start();
 
 // Importing the dotenv package
 require_once __DIR__ .'/../vendor/autoload.php';
@@ -24,6 +24,7 @@ use App\Controller\IndexController;
 use App\Controller\BoutiqueController;
 use App\Controller\BlogController;
 use App\Controller\AproposController;
+use App\Controller\AjoutFormulaireController;
 use App\DependencyInjection\Container;
 use App\Routing\RouteNotFoundException;
 use App\Routing\Router;
@@ -64,6 +65,7 @@ $dotenv->loadEnv(__DIR__ . '/../.env');
     'cache' => __DIR__ . '/../var/twig/',
   ]);
   
+
   $serviceContainer = new Container();
   $serviceContainer
     ->set(Environment::class, $twig)

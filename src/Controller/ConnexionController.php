@@ -53,11 +53,11 @@ class ConnexionController extends AbstractController
                 
                 $user['token'] = $token;
                 // Stocker le token dans un cookie
-                $_COOKIE['token'] = $user['token'];
+                $_SESSION['token'] = $user['token'];
+                $_SESSION['user'] = array('id'=> $user['id'],'email'=> $user['email'],'name'=> $user['nom']);
                 
-                setcookie('token', $user['token'], time() + 3600, '/');
-        
-                return $this->twig->render('Pages/index.html.twig',['user' => $user]);
+                header('Location: /');
+                return $this->twig->render('Pages/index.html.twig',['user' => $_SESSION['user'] ]);
                 
                 
             }
@@ -68,8 +68,10 @@ class ConnexionController extends AbstractController
   #[Route("/api/logout", name: "logout_user", httpMethod: "GET")]
   public function logout()
   {
+      $_SESSION['user'] = null;
+      $_SESSION['token'] = null;
       // Supprimer le cookie authToken en le réinitialisant avec une date d'expiration passée
-      setcookie('authToken', '', time() - 3600, '/');
+      header('Location: /');
       // Rediriger vers la page de connexion ou afficher un message de déconnexion réussie
   }
 

@@ -1,40 +1,54 @@
+<link rel="stylesheet" href="css/header.css">
 <div class="header">
     <div class="header-top">
         <div class="header-top-container">
             <!-- Searchbar -->
-            <i class="bi bi-search"></i>
-            <input class="searchbar" type="text" placeholder="rechercher..."/>
-            <a href="#">
-                <img class="logo" src="./images/logo.png" alt="logo" />
-            </a>
+            <div class="search-field">
+                <img class="bi bi-search" src="icones/Search.svg"/>
+                <input class="searchbar title4" type="text" placeholder="rechercher..."/>
+            </div>
+            <div>
+                <a href="#">
+                    <img class="logo" src="icones/Logo.svg" alt="logo" />
+                </a>
+            </div>
             <!-- User action -->
-            {% if user is defined %}
-                <a class="user-action-link connexion" href="#">
-                    <i class="bi bi-person"></i>
-                    {{ user.username }} (Déconnexion)
+            <div class="nav-profile">
+                {% if user['email'] is defined %}
+                    <a class="user-action-link connexion" href="/api/logout">
+                        <i class="bi bi-person"></i>
+                        {# {{ user['name'] }}  #}
+                        (Déconnexion)
+                    </a>
+                {% else %}
+                    <a class="user-action-link connexion" href="/connexion">
+                        <i class="bi bi-person"></i>
+                        Connexion
+                    </a>
+                {% endif %}
+                <a href="#">
+                    <img class="logo" src="icones/User.svg" alt="user" />
                 </a>
-            {% else %}
-                <a class="user-action-link connexion" href="/connexion">
-                    <i class="bi bi-person"></i>
-                    Connexion
+                <a href="#">
+                    <img class="logo" src="icones/Shopping cart.svg" alt="user" />
                 </a>
-            {% endif %}
+            </div>
             <!-- Menu burger -->
             <i class="bi bi-list"></i>
         </div>
     </div>
     <div class="header-bottom">
         <ul class="nav-link">
-            <li class="link">
+            <li class="link-navbar text16">
                 <a href="/apropos">Présentation</a>
             </li>
-            <li class="link">
+            <li class="link-navbar text16">
                 <a href="/blog">Blog</a>
             </li>
-            <li class="link">
+            <li class="link-navbar text16">
                 <a href="/boutique">Shop</a>
             </li>
-            <li class="link">
+            <li class="link-navbar text16">
                 <a href="/contact">Contact</a>
             </li>
         </ul>

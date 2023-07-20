@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+
+{% block title %}Formulaire d'ajout de bijoux{% endblock %}
+{% block body %} 
+<link rel="stylesheet" href="css/formulaireAjout.css">
+    <h2>Formulaire d'ajout de bijoux</h2>
+    <form action="" method="POST">
+        <label for="nom">Nom du bijoux:</label>
+        <input type="text" id="nom" name="nom" required><br>
+
+        <label for="prix">Prix:</label>
+        <input type="number" id="prix" name="prix" required><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea><br>
+
+        <label for="date_creation">Date de création:</label>
+        <input type="date" id="date_creation" name="date_creation" required><br>
+
+        <label for="stock">Stock:</label>
+        <input type="number" id="stock" name="stock" required><br>
+
+        <label for="pierre">Pierre:</label>
+        <input type="text" id="pierre" name="pierre" required><br>
+
+        <label for="taille">Taille:</label>
+        <input type="text" id="taille" name="taille" required><br>
+
+        <label for="couleur">Couleur:</label>
+        <input type="text" id="couleur" name="couleur" required><br>
+
+        <input type="submit" value="Ajouter">
+    </form>
+
+    <h2>Supprimer ou Modifier un bijoux</h2>
+    <form action="" method="POST">
+        <label for="id_article">ID de l'article:</label>
+        <input type="number" id="id_article" name="id_article" required><br>
+        <input type="submit" name="action" value="Supprimer">
+        <input type="submit" name="action" value="Modifier">
+    </form>
+{% endblock %}
