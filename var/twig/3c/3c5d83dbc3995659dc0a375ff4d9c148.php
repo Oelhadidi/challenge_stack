@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* Pages/index.html.twig */
+/* /Pages/index.html.twig */
 class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
 {
     private $source;
@@ -39,7 +39,7 @@ class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
-        $this->parent = $this->loadTemplate("base.html.twig", "Pages/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "/Pages/index.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
@@ -59,7 +59,7 @@ class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
     <!-- MENU -->
     ";
         // line 7
-        $this->loadTemplate("/Composant/menu.html.twig", "Pages/index.html.twig", 7)->display(twig_array_merge($context, ["user" => ($context["user"] ?? null)]));
+        $this->loadTemplate("/Composant/menu.html.twig", "/Pages/index.html.twig", 7)->display(twig_array_merge($context, ["user" => ($context["user"] ?? null)]));
         // line 8
         echo "
     <!-- CONTENT -->
@@ -97,13 +97,13 @@ class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
         <!-- about -->
         ";
         // line 42
-        $this->loadTemplate("/Composant/BlocApropos.html.twig", "Pages/index.html.twig", 42)->display(twig_array_merge($context, ["background" => "Blog", "title" => "A propos", "description" => "Le nom de ma société m’est venu naturellement en associant le diminutif de mon prénom à ma passion de toutes les pierres ornementales, qui, par leur multitude de couleurs et d’éclats, ne cessent de m’enchanter depuis l’enfance. Je me suis lancée dans la création de bijoux pour que chaque femme ait la possibilité d’accéder à des gemmes telles que le saphir, l’émeraude ou la tourmaline, belle méconnue se parant de mille teintes, mon unique objectif est que vous trouviez la pierre qui s’accordera à votre humeur du jour ou de toujours à un prix vous permettant de multiplier votre plaisir… Tous mes bijoux sont fabriqués à la main dans mon atelier lyonnais, en éditions limitées pour plus
-d’exclusivité, certains même en unique exemplaire, ils vous apporteront cette touche particulière qui vous rendra unique, chaque matière ayant été soigneusement sélectionnée. "]));
+        $this->loadTemplate("/Composant/BlocApropos.html.twig", "/Pages/index.html.twig", 42)->display(twig_array_merge($context, ["background" => "Blog", "title" => "A propos", "description" => "Le nom de ma société m’est venu naturellement en associant le diminutif de mon prénom à ma passion de toutes les pierres ornementales, qui, par leur multitude de couleurs et d’éclats, ne cessent de m’enchanter depuis l’enfance. Je me suis lancée dans la création de bijoux pour que chaque femme ait la possibilité d’accéder à des gemmes telles que le saphir, l’émeraude ou la tourmaline, belle méconnue se parant de mille teintes, mon unique objectif est que vous trouviez la pierre qui s’accordera à votre humeur du jour ou de toujours à un prix vous permettant de multiplier votre plaisir… Tous mes bijoux sont fabriqués à la main dans mon atelier lyonnais, en éditions limitées pour plus
+                        d’exclusivité, certains même en unique exemplaire, ils vous apporteront cette touche particulière qui vous rendra unique, chaque matière ayant été soigneusement sélectionnée. "]));
         // line 48
         echo "
         <!-- Collections -->
         <div class=\"collection\">
-                <img src=\"\" alt=\"shape\" />
+                <img src=\"./css/img/Vector 1.png\" alt=\"shape\" />
                 <div class=\"collection-container\">
                     <h2>Nos collections</h2>
                     <p class=\"paragraphe\">
@@ -146,38 +146,40 @@ d’exclusivité, certains même en unique exemplaire, ils vous apporteront cett
                     ";
         // line 91
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["products"] ?? null));
-        foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
+        $context['_seq'] = twig_ensure_traversable(($context["bijoux"] ?? null));
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
+        foreach ($context['_seq'] as $context["_key"] => $context["bij"]) {
             // line 92
-            echo "                        <div class=\"slide-card\">
-                            <div class=\"box-img card";
-            // line 93
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 93), "html", null, true);
-            echo "\"></div>
-                            <div class=\"text-container\">
-                                <h3>";
+            echo "                        ";
+            $this->loadTemplate("/Composant/slideCard.html.twig", "/Pages/index.html.twig", 92)->display(twig_array_merge($context, ["product" =>             // line 93
+$context["bij"]]));
             // line 95
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 95), "html", null, true);
-            echo "</h3>
-                                <p class=\"paragraphe\">
-                                ";
-            // line 97
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "description", [], "any", false, false, false, 97), "html", null, true);
-            echo "
-                                </p>
-                                <p>";
-            // line 99
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 99), "html", null, true);
-            echo "€</p>
-                                <a class=\"btn\">Ajouter au panier</a>
-                            </div>
-                        </div>
-                    ";
+            echo "                    ";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['bij'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 104
+        // line 96
         echo "                    </div>
                     <div class=\"arrows-container\">
                         <i class=\"bi bi-arrow-right-circle\"></i>
@@ -190,55 +192,22 @@ d’exclusivité, certains même en unique exemplaire, ils vous apporteront cett
         </div>
 
         <!-- Actualité -->
-        <div class=\"news\">
-            <div class=\"news-container\">
-                <h2 class=\"title\">Nos actualités<br><span>A la Une</span></h2>
-                <div class=\"card-container\">
-                    ";
-        // line 120
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["articles"] ?? null));
-        foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-            // line 121
-            echo "                        <div class=\"card news_card";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 121), "html", null, true);
-            echo "\">
-                            <div class=\"text-container\">
-                                <h4 class=\"article-title\">";
-            // line 123
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "name", [], "any", false, false, false, 123), "html", null, true);
-            echo "</h4>
-                                <p class=\"paragraphe\">
-                                ";
-            // line 125
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "description", [], "any", false, false, false, 125), "html", null, true);
-            echo "
-                                </p>
-                            </div>
-                        </div>
-                    ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 130
-        echo "                </div>
-            </div>
-        </div>
-
+        ";
+        // line 125
+        echo "
 
     <!-- FOOTER -->
     ";
-        // line 136
-        $this->loadTemplate("/Composant/footer.html.twig", "Pages/index.html.twig", 136)->display($context);
-        // line 137
+        // line 128
+        $this->loadTemplate("/Composant/footer.html.twig", "/Pages/index.html.twig", 128)->display($context);
+        // line 129
         echo "
 ";
     }
 
     public function getTemplateName()
     {
-        return "Pages/index.html.twig";
+        return "/Pages/index.html.twig";
     }
 
     public function isTraitable()
@@ -248,7 +217,7 @@ d’exclusivité, certains même en unique exemplaire, ils vous apporteront cett
 
     public function getDebugInfo()
     {
-        return array (  235 => 137,  233 => 136,  225 => 130,  214 => 125,  209 => 123,  203 => 121,  199 => 120,  181 => 104,  170 => 99,  165 => 97,  160 => 95,  155 => 93,  152 => 92,  148 => 91,  103 => 48,  100 => 42,  64 => 8,  62 => 7,  58 => 5,  54 => 4,  47 => 3,  36 => 1,);
+        return array (  204 => 129,  202 => 128,  197 => 125,  183 => 96,  169 => 95,  167 => 93,  165 => 92,  148 => 91,  103 => 48,  100 => 42,  64 => 8,  62 => 7,  58 => 5,  54 => 4,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -298,12 +267,12 @@ d’exclusivité, certains même en unique exemplaire, ils vous apporteront cett
             background: 'Blog',
             title: 'A propos',
             description: 'Le nom de ma société m’est venu naturellement en associant le diminutif de mon prénom à ma passion de toutes les pierres ornementales, qui, par leur multitude de couleurs et d’éclats, ne cessent de m’enchanter depuis l’enfance. Je me suis lancée dans la création de bijoux pour que chaque femme ait la possibilité d’accéder à des gemmes telles que le saphir, l’émeraude ou la tourmaline, belle méconnue se parant de mille teintes, mon unique objectif est que vous trouviez la pierre qui s’accordera à votre humeur du jour ou de toujours à un prix vous permettant de multiplier votre plaisir… Tous mes bijoux sont fabriqués à la main dans mon atelier lyonnais, en éditions limitées pour plus
-d’exclusivité, certains même en unique exemplaire, ils vous apporteront cette touche particulière qui vous rendra unique, chaque matière ayant été soigneusement sélectionnée. ',
+                        d’exclusivité, certains même en unique exemplaire, ils vous apporteront cette touche particulière qui vous rendra unique, chaque matière ayant été soigneusement sélectionnée. ',
         }%}
 
         <!-- Collections -->
         <div class=\"collection\">
-                <img src=\"\" alt=\"shape\" />
+                <img src=\"./css/img/Vector 1.png\" alt=\"shape\" />
                 <div class=\"collection-container\">
                     <h2>Nos collections</h2>
                     <p class=\"paragraphe\">
@@ -343,18 +312,10 @@ d’exclusivité, certains même en unique exemplaire, ils vous apporteront cett
                 <!-- Slide  -->
                 <div class=\"slide\">
                     <div class=\"slide-container\">
-                    {% for product in products %}
-                        <div class=\"slide-card\">
-                            <div class=\"box-img card{{product.id}}\"></div>
-                            <div class=\"text-container\">
-                                <h3>{{product.name}}</h3>
-                                <p class=\"paragraphe\">
-                                {{product.description}}
-                                </p>
-                                <p>{{product.price}}€</p>
-                                <a class=\"btn\">Ajouter au panier</a>
-                            </div>
-                        </div>
+                    {% for bij in bijoux %}
+                        {% include '/Composant/slideCard.html.twig' with {
+                            product: bij
+                        } %}
                     {% endfor %}
                     </div>
                     <div class=\"arrows-container\">
@@ -368,7 +329,7 @@ d’exclusivité, certains même en unique exemplaire, ils vous apporteront cett
         </div>
 
         <!-- Actualité -->
-        <div class=\"news\">
+        {# <div class=\"news\">
             <div class=\"news-container\">
                 <h2 class=\"title\">Nos actualités<br><span>A la Une</span></h2>
                 <div class=\"card-container\">
@@ -384,12 +345,12 @@ d’exclusivité, certains même en unique exemplaire, ils vous apporteront cett
                     {% endfor %}
                 </div>
             </div>
-        </div>
+        </div> #}
 
 
     <!-- FOOTER -->
     {% include '/Composant/footer.html.twig' %}
 
-{% endblock %}", "Pages/index.html.twig", "C:\\Desktop\\CoursIW3\\challenge stack 2\\Challenge-stack-2-2022-2023\\templates\\Pages\\index.html.twig");
+{% endblock %}", "/Pages/index.html.twig", "C:\\Desktop\\CoursIW3\\challenge stack 2\\Challenge-stack-2-2022-2023\\templates\\Pages\\index.html.twig");
     }
 }
