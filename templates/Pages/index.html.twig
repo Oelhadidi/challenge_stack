@@ -48,7 +48,7 @@
 
         <!-- Collections -->
         <div class="collection">
-                <img src="" alt="shape" />
+                <img src="css/img/Vector 1.png" alt="shape" />
                 <div class="collection-container">
                     <h2>Nos collections</h2>
                     <p class="paragraphe">
@@ -88,18 +88,10 @@
                 <!-- Slide  -->
                 <div class="slide">
                     <div class="slide-container">
-                    {% for product in products %}
-                        <div class="slide-card">
-                            <div class="box-img card{{product.id}}"></div>
-                            <div class="text-container">
-                                <h3>{{product.name}}</h3>
-                                <p class="paragraphe">
-                                {{product.description}}
-                                </p>
-                                <p>{{product.price}}€</p>
-                                <a class="btn">Ajouter au panier</a>
-                            </div>
-                        </div>
+                    {% for bijoux in bijoux %}
+                        {% include '/Composant/slideCard.html.twig' with {
+                            product : bijoux
+                        } %}
                     {% endfor %}
                     </div>
                     <div class="arrows-container">
@@ -112,7 +104,7 @@
                 </div>
         </div>
 
-        <!-- Actualité -->
+        {# <!-- Actualité -->
         <div class="news">
             <div class="news-container">
                 <h2 class="title">Nos actualités<br><span>A la Une</span></h2>
@@ -129,7 +121,7 @@
                     {% endfor %}
                 </div>
             </div>
-        </div>
+        </div> #}
 
 
     <!-- FOOTER -->

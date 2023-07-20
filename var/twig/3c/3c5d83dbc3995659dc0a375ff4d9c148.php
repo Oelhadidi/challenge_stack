@@ -103,7 +103,7 @@ class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
         echo "
         <!-- Collections -->
         <div class=\"collection\">
-                <img src=\"./css/img/Vector 1.png\" alt=\"shape\" />
+                <img src=\"css/img/Vector 1.png\" alt=\"shape\" />
                 <div class=\"collection-container\">
                     <h2>Nos collections</h2>
                     <p class=\"paragraphe\">
@@ -146,7 +146,7 @@ class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
                     ";
         // line 91
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["bijoux"] ?? null));
+        $context['_seq'] = twig_ensure_traversable($context["bijoux"]);
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -160,11 +160,11 @@ class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
             $context['loop']['length'] = $length;
             $context['loop']['last'] = 1 === $length;
         }
-        foreach ($context['_seq'] as $context["_key"] => $context["bij"]) {
+        foreach ($context['_seq'] as $context["_key"] => $context["bijoux"]) {
             // line 92
             echo "                        ";
             $this->loadTemplate("/Composant/slideCard.html.twig", "/Pages/index.html.twig", 92)->display(twig_array_merge($context, ["product" =>             // line 93
-$context["bij"]]));
+$context["bijoux"]]));
             // line 95
             echo "                    ";
             ++$context['loop']['index0'];
@@ -177,7 +177,7 @@ $context["bij"]]));
             }
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['bij'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['bijoux'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 96
         echo "                    </div>
@@ -191,7 +191,6 @@ $context["bij"]]));
                 </div>
         </div>
 
-        <!-- Actualité -->
         ";
         // line 125
         echo "
@@ -217,7 +216,7 @@ $context["bij"]]));
 
     public function getDebugInfo()
     {
-        return array (  204 => 129,  202 => 128,  197 => 125,  183 => 96,  169 => 95,  167 => 93,  165 => 92,  148 => 91,  103 => 48,  100 => 42,  64 => 8,  62 => 7,  58 => 5,  54 => 4,  47 => 3,  36 => 1,);
+        return array (  203 => 129,  201 => 128,  196 => 125,  183 => 96,  169 => 95,  167 => 93,  165 => 92,  148 => 91,  103 => 48,  100 => 42,  64 => 8,  62 => 7,  58 => 5,  54 => 4,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -272,7 +271,7 @@ $context["bij"]]));
 
         <!-- Collections -->
         <div class=\"collection\">
-                <img src=\"./css/img/Vector 1.png\" alt=\"shape\" />
+                <img src=\"css/img/Vector 1.png\" alt=\"shape\" />
                 <div class=\"collection-container\">
                     <h2>Nos collections</h2>
                     <p class=\"paragraphe\">
@@ -312,9 +311,9 @@ $context["bij"]]));
                 <!-- Slide  -->
                 <div class=\"slide\">
                     <div class=\"slide-container\">
-                    {% for bij in bijoux %}
+                    {% for bijoux in bijoux %}
                         {% include '/Composant/slideCard.html.twig' with {
-                            product: bij
+                            product : bijoux
                         } %}
                     {% endfor %}
                     </div>
@@ -328,8 +327,8 @@ $context["bij"]]));
                 </div>
         </div>
 
-        <!-- Actualité -->
-        {# <div class=\"news\">
+        {# <!-- Actualité -->
+        <div class=\"news\">
             <div class=\"news-container\">
                 <h2 class=\"title\">Nos actualités<br><span>A la Une</span></h2>
                 <div class=\"card-container\">
