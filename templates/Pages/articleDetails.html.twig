@@ -6,12 +6,13 @@
     {% include 'Composant/menu.html.twig' with {'user': user} %}
 
     <!-- CONTENT -->
-    <h1>{{article.name}}</h1>
-    <p>{{article.author}}</p>
-    <p>{{article.createdAt}}</p>
-    <img src={{article.image}} alt="image article" />
-    <p>{{article.content}}</p>
-
+    <h1 class="title3">{{article.name}}</h1>
+    <div class="texte16">
+        <p>{{article.author}}</p>
+        <p>{{article.createdAt}}</p>
+        <img src={{article.image}} alt="image article" />
+        <p>{{article.content}}</p>
+    <div>
 
     <!-- Footer -->
     {% include 'Composant/footer.html.twig' %}
