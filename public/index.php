@@ -29,6 +29,7 @@ use App\Routing\RouteNotFoundException;
 use App\Routing\Router;
 use App\Routing\Attribute\Route;
 use App\Utils\AuthToken;
+use App\Routing\ArgumentResolver;
 
 $dotenv = new Dotenv();
 $dotenv->loadEnv(__DIR__ . '/../.env');
@@ -71,7 +72,7 @@ $dotenv->loadEnv(__DIR__ . '/../.env');
     ->set(AuthToken::class, $Authtoken);
   
   // Appeler un routeur pour lui transférer la requête
-  $router = new Router($serviceContainer);
+  $router = new Router($serviceContainer, new ArgumentResolver());
   $router->registerRoutes();
   
   try {

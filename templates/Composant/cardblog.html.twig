@@ -1,9 +1,13 @@
 <div class="card-container">
     <div class="card">
         <div class="text-container">
-            <h4 class="article-title">{{ article.title }}</h4>
+            <h2 class="article-title">
+            <a href="/blog/{{article.id}}"> {{ article.titre }}</a></h2>
+             <p class="subtitle">
+                {{ article.date_creation }}
+            </p>
             <p class="paragraphe">
-                {{ article.description }}
+                {{ article.contenu }}
             </p>
         </div>
 </div>
