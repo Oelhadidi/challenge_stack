@@ -3,9 +3,10 @@
 {% block title %}{{article.name}}{% endblock %}
 {% block body %}
     <!-- MENU -->
-    {% include 'Composant/menu.html.twig' with {'user': user} %}
+    {% include 'Composant/menu.html.twig' with {'user': userLoggedIn} %}
 
     <!-- CONTENT -->
+<<<<<<< HEAD
     <h1 class="title3">{{article.name}}</h1>
     <div class="texte16">
         <p>{{article.author}}</p>
@@ -13,6 +14,14 @@
         <img src={{article.image}} alt="image article" />
         <p>{{article.content}}</p>
     <div>
+=======
+    <h1>{{blog.titre}}</h1>
+    <p>{{blog.auteur}}</p>
+    <p>{{blog.date_creation}}</p>
+    <img src={{blog.image_id}} alt="image article" />
+    <p>{{blog.contenu}}</p>
+
+>>>>>>> main
 
     <!-- Footer -->
     {% include 'Composant/footer.html.twig' %}

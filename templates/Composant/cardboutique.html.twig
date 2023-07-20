@@ -1,14 +1,16 @@
 <div class="card-container">
   <div class="card">        
-    <div class="image-card" style="background-image: url('{{ product.background }}')"></div>
+    <div class="image-card" style="background-image: url('{{ product.image }}')"></div>
     <div class="text-container-card">
-      <a href="/boutique/{{product.id}}" ><h3>{{product.title}}</h3></a>
-      <p>{{product.description}}</p>
+      <a href="/boutique/{{product.id}}" ><h3>{{product.nom}}</h3></a>
+      <p>{{product.descriptions}}</p>
       <div class="price">
-        <p class="des">{{product.price}}€</p>
-        <a class="btn-panier" href="">Ajouter au Panier</a>
+        <p class="des">{{product.prix}}€</p>
+        <button class="btn-panier" data-user="{{ userId }}" data-product="{{ product.id }}">Ajouter au Panier</button>
     </div>
   </div>
 </div>
+
+
 
     

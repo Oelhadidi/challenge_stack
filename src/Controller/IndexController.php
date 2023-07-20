@@ -9,8 +9,12 @@ use \PDO;
 
 class IndexController extends AbstractController
 {
+<<<<<<< HEAD
 
     #[Route("/", name: "homepage", httpMethod: "GET")]
+=======
+    #[Route("/", name: "homepage")]
+>>>>>>> main
     public function home()
     {
         $statement = 'SELECT b.id AS id, b.nom AS nom, b.prix AS prix, b.descriptions AS descriptions, images.Logo,

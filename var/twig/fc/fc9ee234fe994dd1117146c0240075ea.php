@@ -54,7 +54,9 @@ class __TwigTemplate_bc45fb5b2c5f1361559e1e65583ac1cd extends Template
         // line 11
         $this->displayBlock('body', $context, $blocks);
         // line 12
-        echo "</body>
+        echo "
+    <script src=\"js/index.js\" />
+</body>
 </html>";
     }
 
@@ -79,7 +81,7 @@ class __TwigTemplate_bc45fb5b2c5f1361559e1e65583ac1cd extends Template
 
     public function getDebugInfo()
     {
-        return array (  69 => 11,  62 => 5,  57 => 12,  55 => 11,  50 => 8,  45 => 5,  39 => 1,);
+        return array (  71 => 11,  64 => 5,  57 => 12,  55 => 11,  50 => 8,  45 => 5,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -95,6 +97,8 @@ class __TwigTemplate_bc45fb5b2c5f1361559e1e65583ac1cd extends Template
 </head>
 <body>
     {% block body %} {% endblock %}
+
+    <script src=\"js/index.js\" />
 </body>
 </html>", "base.html.twig", "/workspaces/challenge_stack/templates/base.html.twig");
     }
