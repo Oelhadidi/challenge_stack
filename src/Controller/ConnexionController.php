@@ -49,6 +49,7 @@ class ConnexionController extends AbstractController
                 // Générer un token
                 $authToken = new AuthToken();
                 $token = $authToken->generateAuthToken($user['id'],$user['email']);
+                setcookie('token', $token, time() + 3600, '/');
 
                 
                 $user['token'] = $token;

@@ -1,0 +1,133 @@
+/***********************************
+Fait par : PATRICELLO Kevin Feat ELHADIDI Omar
+Le : 17/07/2023
+Objectif : CSS DU FOOTER
+***********************************/
+
+/************** IMPORT **************/
+
+@import'./style.css';
+
+/************** IMPORT **************/
+
+/************** CODE PRINCIPALE **************/
+
+    /********* GENERALITE DU FOOTER ********/
+        
+    .footer{
+        width: 100vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--color-blue);
+    }
+
+    .footer .footer-container{
+        padding-top: 80px;
+        padding-bottom: 80px;
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    /********* GENERALITE DU FOOTER ********/
+
+    /*********** AIDE & COLLECTE + EMMA PIERRE ***********/
+
+    .footer .footer-container .section{
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: white;
+        width: 50%;
+        row-gap: 12px;
+        border-right: 1px white solid;
+    }
+
+    /*********** AIDE & COLLECTE + EMMA PIERRE ***********/
+
+
+    /*********** NOUS SUIVRE ***********/
+
+    .footer .footer-container .third-section{
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: white;
+        width: 50%;
+        row-gap: 12px;
+        justify-content: center;
+        border-right: none;
+    }
+
+    .footer .footer-container .section .title3{
+        font-style: normal;
+        line-height: 43px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        text-transform: capitalize;
+        color: #FFFFFF;
+    }
+    /*********** NOUS SUIVRE ***********/
+
+    /*********** COPYRIGHT *************/
+
+    .copyright{
+        width: 100%;
+        padding: 1em;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer .footer-container .section .list-footer{
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 12px;
+        column-gap: 12px;
+        padding-left: 0px !important;
+    }
+    .footer .footer-container .section .list-footer li{
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+        column-gap: 12px;
+        padding-left: 0px !important;
+    }
+    .footer .footer-container .section .list-footer li a{
+        color: white;
+        text-decoration: none;
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+
+    }
+    .footer .footer-container .section .list-footer li a:hover{
+        text-decoration: underline;
+
+    }
+    .footer .footer-container .section .list-footer li a img{
+
+        width: 34.38px;
+        height: 23.97px;
+    }
+
+    /*********** COPYRIGHT *************/
+
+/************** CODE PRINCIPALE **************/
+
+/**************  CODE TERMINER  **************/

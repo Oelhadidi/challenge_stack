@@ -67,26 +67,26 @@ class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
         <!-- Banner -->
         <div class=\"banner\">
             <!-- Shape -->
-            <img src=\"./images/Vector 1.png\" alt=\"shape\" />
+            <img src=\"./css/img/Vector 1.png\" alt=\"shape\" />
             <div class=\"hero-container\">
                 <div class=\"hero-card-container\">
                     <div class=\"hero-card left\">
                         <div class=\"box-image\">
-                            <img src=\"./images/Star 3.png\" alt=\"star\"/>
+                            <img src=\"./css/img/Star 3.png\" alt=\"star\"/>
                         </div>
                         <h2 class=\"title\">Saphyre </br><span>Pierre</span> </h2>
                     </div>
                     <div class=\"hero-card center\">
                         <div class=\"overlay\">
                             <h2>Made in france
-                                <img class=\"icone-fr\" src=\"./images/france-2.png\" alt=\"icone france\"/>
+                                <img class=\"icone-fr\" src=\"./css/img/france-2.png\" alt=\"icone france\"/>
                             </h2>
                         </div>
                         <h2 class=\"title\"></h2>
                     </div>
                     <div class=\"hero-card right\">
                         <div class=\"box-image\">
-                            <img src=\"./images/Star 3.png\" alt=\"star\"/>
+                            <img src=\"./css/img/Star 3.png\" alt=\"star\"/>
                         </div>
                         <h2 class=\"title\">Emeraude </br><span>Pierre</span> </h2>
                     </div>
@@ -97,8 +97,9 @@ class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
         <!-- about -->
         ";
         // line 42
-        $this->loadTemplate("/Composant/BlocApropos.html.twig", "Pages/index.html.twig", 42)->display(twig_array_merge($context, ["background" => "Blog", "title" => "", "description" => ""]));
-        // line 47
+        $this->loadTemplate("/Composant/BlocApropos.html.twig", "Pages/index.html.twig", 42)->display(twig_array_merge($context, ["background" => "Blog", "title" => "A propos", "description" => "Le nom de ma société m’est venu naturellement en associant le diminutif de mon prénom à ma passion de toutes les pierres ornementales, qui, par leur multitude de couleurs et d’éclats, ne cessent de m’enchanter depuis l’enfance. Je me suis lancée dans la création de bijoux pour que chaque femme ait la possibilité d’accéder à des gemmes telles que le saphir, l’émeraude ou la tourmaline, belle méconnue se parant de mille teintes, mon unique objectif est que vous trouviez la pierre qui s’accordera à votre humeur du jour ou de toujours à un prix vous permettant de multiplier votre plaisir… Tous mes bijoux sont fabriqués à la main dans mon atelier lyonnais, en éditions limitées pour plus
+d’exclusivité, certains même en unique exemplaire, ils vous apporteront cette touche particulière qui vous rendra unique, chaque matière ayant été soigneusement sélectionnée. "]));
+        // line 48
         echo "
         <!-- Collections -->
         <div class=\"collection\">
@@ -143,30 +144,30 @@ class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
                 <div class=\"slide\">
                     <div class=\"slide-container\">
                     ";
-        // line 90
+        // line 91
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["products"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 91
+            // line 92
             echo "                        <div class=\"slide-card\">
                             <div class=\"box-img card";
-            // line 92
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 92), "html", null, true);
+            // line 93
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 93), "html", null, true);
             echo "\"></div>
                             <div class=\"text-container\">
                                 <h3>";
-            // line 94
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 94), "html", null, true);
+            // line 95
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 95), "html", null, true);
             echo "</h3>
                                 <p class=\"paragraphe\">
                                 ";
-            // line 96
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "description", [], "any", false, false, false, 96), "html", null, true);
+            // line 97
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "description", [], "any", false, false, false, 97), "html", null, true);
             echo "
                                 </p>
                                 <p>";
-            // line 98
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 98), "html", null, true);
+            // line 99
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 99), "html", null, true);
             echo "€</p>
                                 <a class=\"btn\">Ajouter au panier</a>
                             </div>
@@ -176,7 +177,7 @@ class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 103
+        // line 104
         echo "                    </div>
                     <div class=\"arrows-container\">
                         <i class=\"bi bi-arrow-right-circle\"></i>
@@ -194,23 +195,23 @@ class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
                 <h2 class=\"title\">Nos actualités<br><span>A la Une</span></h2>
                 <div class=\"card-container\">
                     ";
-        // line 119
+        // line 120
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["articles"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-            // line 120
+            // line 121
             echo "                        <div class=\"card news_card";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 120), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", [], "any", false, false, false, 121), "html", null, true);
             echo "\">
                             <div class=\"text-container\">
                                 <h4 class=\"article-title\">";
-            // line 122
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "name", [], "any", false, false, false, 122), "html", null, true);
+            // line 123
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "name", [], "any", false, false, false, 123), "html", null, true);
             echo "</h4>
                                 <p class=\"paragraphe\">
                                 ";
-            // line 124
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "description", [], "any", false, false, false, 124), "html", null, true);
+            // line 125
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "description", [], "any", false, false, false, 125), "html", null, true);
             echo "
                                 </p>
                             </div>
@@ -220,7 +221,7 @@ class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 129
+        // line 130
         echo "                </div>
             </div>
         </div>
@@ -228,9 +229,9 @@ class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
 
     <!-- FOOTER -->
     ";
-        // line 135
-        $this->loadTemplate("/Composant/footer.html.twig", "Pages/index.html.twig", 135)->display($context);
         // line 136
+        $this->loadTemplate("/Composant/footer.html.twig", "Pages/index.html.twig", 136)->display($context);
+        // line 137
         echo "
 ";
     }
@@ -247,7 +248,7 @@ class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
 
     public function getDebugInfo()
     {
-        return array (  234 => 136,  232 => 135,  224 => 129,  213 => 124,  208 => 122,  202 => 120,  198 => 119,  180 => 103,  169 => 98,  164 => 96,  159 => 94,  154 => 92,  151 => 91,  147 => 90,  102 => 47,  100 => 42,  64 => 8,  62 => 7,  58 => 5,  54 => 4,  47 => 3,  36 => 1,);
+        return array (  235 => 137,  233 => 136,  225 => 130,  214 => 125,  209 => 123,  203 => 121,  199 => 120,  181 => 104,  170 => 99,  165 => 97,  160 => 95,  155 => 93,  152 => 92,  148 => 91,  103 => 48,  100 => 42,  64 => 8,  62 => 7,  58 => 5,  54 => 4,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -265,26 +266,26 @@ class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
         <!-- Banner -->
         <div class=\"banner\">
             <!-- Shape -->
-            <img src=\"./images/Vector 1.png\" alt=\"shape\" />
+            <img src=\"./css/img/Vector 1.png\" alt=\"shape\" />
             <div class=\"hero-container\">
                 <div class=\"hero-card-container\">
                     <div class=\"hero-card left\">
                         <div class=\"box-image\">
-                            <img src=\"./images/Star 3.png\" alt=\"star\"/>
+                            <img src=\"./css/img/Star 3.png\" alt=\"star\"/>
                         </div>
                         <h2 class=\"title\">Saphyre </br><span>Pierre</span> </h2>
                     </div>
                     <div class=\"hero-card center\">
                         <div class=\"overlay\">
                             <h2>Made in france
-                                <img class=\"icone-fr\" src=\"./images/france-2.png\" alt=\"icone france\"/>
+                                <img class=\"icone-fr\" src=\"./css/img/france-2.png\" alt=\"icone france\"/>
                             </h2>
                         </div>
                         <h2 class=\"title\"></h2>
                     </div>
                     <div class=\"hero-card right\">
                         <div class=\"box-image\">
-                            <img src=\"./images/Star 3.png\" alt=\"star\"/>
+                            <img src=\"./css/img/Star 3.png\" alt=\"star\"/>
                         </div>
                         <h2 class=\"title\">Emeraude </br><span>Pierre</span> </h2>
                     </div>
@@ -295,8 +296,9 @@ class __TwigTemplate_30028a69fc5494c00b2f6bdf2fd6e1a2 extends Template
         <!-- about -->
         {% include '/Composant/BlocApropos.html.twig' with {
             background: 'Blog',
-            title: '',
-            description: '',
+            title: 'A propos',
+            description: 'Le nom de ma société m’est venu naturellement en associant le diminutif de mon prénom à ma passion de toutes les pierres ornementales, qui, par leur multitude de couleurs et d’éclats, ne cessent de m’enchanter depuis l’enfance. Je me suis lancée dans la création de bijoux pour que chaque femme ait la possibilité d’accéder à des gemmes telles que le saphir, l’émeraude ou la tourmaline, belle méconnue se parant de mille teintes, mon unique objectif est que vous trouviez la pierre qui s’accordera à votre humeur du jour ou de toujours à un prix vous permettant de multiplier votre plaisir… Tous mes bijoux sont fabriqués à la main dans mon atelier lyonnais, en éditions limitées pour plus
+d’exclusivité, certains même en unique exemplaire, ils vous apporteront cette touche particulière qui vous rendra unique, chaque matière ayant été soigneusement sélectionnée. ',
         }%}
 
         <!-- Collections -->

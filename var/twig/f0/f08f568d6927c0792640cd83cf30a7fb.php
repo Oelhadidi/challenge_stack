@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* Composant/footer.html.twig */
+/* /Composant/footer.html.twig */
 class __TwigTemplate_be2afab5c93578808bac22cdc2ea016a extends Template
 {
     private $source;
@@ -35,11 +35,11 @@ class __TwigTemplate_be2afab5c93578808bac22cdc2ea016a extends Template
         $macros = $this->macros;
         // line 1
         echo "
-    
+<link rel=\"stylesheet\" href=\"css/footer.css\">   
 <div class=\"footer\">
     <div class=\"footer-container\">
         <div class=\"section\">
-            <h4>Aide & Collect</h4>
+            <h4 class=\"title3\">Aide & Collect</h4>
             <ul class=\"list-footer\">
                 <li>
                     <a href=\"#\">Conditions générales</a>
@@ -59,7 +59,7 @@ class __TwigTemplate_be2afab5c93578808bac22cdc2ea016a extends Template
             </ul>
         </div>
         <div class=\"section\">
-            <h4>Emma Pierre</h4>
+            <h4 class=\"title3\">Emma Pierre</h4>
             <ul class=\"list-footer\">
                 <li>
                     <a href=\"#\">Notre Histoire</a>
@@ -73,14 +73,17 @@ class __TwigTemplate_be2afab5c93578808bac22cdc2ea016a extends Template
                 <li>
                     <a href=\"#\">Nos bijouteries</a>
                 </li>
+                <li>
+                    <a href=\"#\">Nos pierres</a>
+                </li>
             </ul>
         </div>
         <div class=\"section third-section\">
-            <h4>Suivez-nous</h4>
+            <h4 class=\"title3\">Suivez-nous</h4>
             <ul class=\"list-footer\">
                 <li>
                     <a href=\"#\">
-                        <img src=\"./images/insta_svg.png\" alt=\"logo instagram\" />
+                        <img src=\"./css/img/insta_svg.png\" alt=\"logo instagram\" />
                         @EmmaPierreJewels</a>
                 </li>
                 <li>
@@ -102,7 +105,7 @@ class __TwigTemplate_be2afab5c93578808bac22cdc2ea016a extends Template
 
     public function getTemplateName()
     {
-        return "Composant/footer.html.twig";
+        return "/Composant/footer.html.twig";
     }
 
     public function getDebugInfo()
@@ -113,11 +116,11 @@ class __TwigTemplate_be2afab5c93578808bac22cdc2ea016a extends Template
     public function getSourceContext()
     {
         return new Source("
-    
+<link rel=\"stylesheet\" href=\"css/footer.css\">   
 <div class=\"footer\">
     <div class=\"footer-container\">
         <div class=\"section\">
-            <h4>Aide & Collect</h4>
+            <h4 class=\"title3\">Aide & Collect</h4>
             <ul class=\"list-footer\">
                 <li>
                     <a href=\"#\">Conditions générales</a>
@@ -137,7 +140,7 @@ class __TwigTemplate_be2afab5c93578808bac22cdc2ea016a extends Template
             </ul>
         </div>
         <div class=\"section\">
-            <h4>Emma Pierre</h4>
+            <h4 class=\"title3\">Emma Pierre</h4>
             <ul class=\"list-footer\">
                 <li>
                     <a href=\"#\">Notre Histoire</a>
@@ -151,14 +154,17 @@ class __TwigTemplate_be2afab5c93578808bac22cdc2ea016a extends Template
                 <li>
                     <a href=\"#\">Nos bijouteries</a>
                 </li>
+                <li>
+                    <a href=\"#\">Nos pierres</a>
+                </li>
             </ul>
         </div>
         <div class=\"section third-section\">
-            <h4>Suivez-nous</h4>
+            <h4 class=\"title3\">Suivez-nous</h4>
             <ul class=\"list-footer\">
                 <li>
                     <a href=\"#\">
-                        <img src=\"./images/insta_svg.png\" alt=\"logo instagram\" />
+                        <img src=\"./css/img/insta_svg.png\" alt=\"logo instagram\" />
                         @EmmaPierreJewels</a>
                 </li>
                 <li>
@@ -175,6 +181,6 @@ class __TwigTemplate_be2afab5c93578808bac22cdc2ea016a extends Template
     <p class=\"copyright\"> ©️ 2023 - EMMA PIERRE - Tous droits réservés </p>
     </div>
     
-", "Composant/footer.html.twig", "C:\\Desktop\\CoursIW3\\challenge stack 2\\Challenge-stack-2-2022-2023\\templates\\Composant\\footer.html.twig");
+", "/Composant/footer.html.twig", "C:\\Desktop\\CoursIW3\\challenge stack 2\\Challenge-stack-2-2022-2023\\templates\\Composant\\footer.html.twig");
     }
 }
