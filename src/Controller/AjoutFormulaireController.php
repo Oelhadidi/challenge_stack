@@ -7,7 +7,7 @@ use \Exception;
 
 class AjoutFormulaireController extends AbstractController
 {
-    #[Route("/formulaireajout", name: "formulaireAjout_page", httpMethod:"GET")]
+    #[Route("/formulaireajout", name: "formulaireAjout_page", httpMethods: ["GET"])]
     public function formulaireAjout()
     {
         // Rediriger vers la page d'inscription

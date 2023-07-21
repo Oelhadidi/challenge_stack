@@ -34,9 +34,9 @@ class __TwigTemplate_692d4b06bbf9fe92c1fd24b947a27267 extends Template
     {
         $macros = $this->macros;
         // line 1
-        echo "<section class=\"banner-blog\" style=\"background-image: url('";
-        echo twig_escape_filter($this->env, ($context["background"] ?? null), "html", null, true);
-        echo "')\">
+        echo "<section class=\"banner-blog\" style=\"background-image: url('css/img/";
+        echo twig_escape_filter($this->env, ($context["title"] ?? null), "html", null, true);
+        echo "_photo.jpg')\">
   <p class=\"signature-blog\">Emma </br> <span>Paris</span></p>
   <h1>";
         // line 3
@@ -63,7 +63,7 @@ class __TwigTemplate_692d4b06bbf9fe92c1fd24b947a27267 extends Template
 
     public function getSourceContext()
     {
-        return new Source("<section class=\"banner-blog\" style=\"background-image: url('{{ background }}')\">
+        return new Source("<section class=\"banner-blog\" style=\"background-image: url('css/img/{{title}}_photo.jpg')\">
   <p class=\"signature-blog\">Emma </br> <span>Paris</span></p>
   <h1>{{ title }}</h1>
 </section>

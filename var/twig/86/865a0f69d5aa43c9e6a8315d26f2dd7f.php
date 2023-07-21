@@ -63,7 +63,7 @@ class __TwigTemplate_7d31dd776190681aec9a44379f6a0eae extends Template
         echo "
     <!-- CONTENT -->
     <div class=\"about-presentation\">
-        <img src=\"\" alt=\"shape\" />
+        <img src=\"\" alt=\"\" />
         <div class=\"about-presentation-container\">
             <!-- Image -->
             <div class=\"presentation-text-container\">
@@ -135,7 +135,7 @@ class __TwigTemplate_7d31dd776190681aec9a44379f6a0eae extends Template
 
     <!-- CONTENT -->
     <div class=\"about-presentation\">
-        <img src=\"\" alt=\"shape\" />
+        <img src=\"\" alt=\"\" />
         <div class=\"about-presentation-container\">
             <!-- Image -->
             <div class=\"presentation-text-container\">

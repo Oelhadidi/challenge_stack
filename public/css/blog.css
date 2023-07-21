@@ -6,7 +6,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: url("../images/blog_photo.jpg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -59,7 +58,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background: url("../images/blog_photo.jpg");
+        background: url("../css/img/blog_photo.jpg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;

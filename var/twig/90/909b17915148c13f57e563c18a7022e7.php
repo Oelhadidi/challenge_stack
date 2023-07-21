@@ -74,7 +74,7 @@ class __TwigTemplate_8261d4bdb2ecbb952dfdc8962b10c3e0 extends Template
             ";
         // line 18
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["articles"] ?? null));
+        $context['_seq'] = twig_ensure_traversable($context["blog"]);
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -88,11 +88,11 @@ class __TwigTemplate_8261d4bdb2ecbb952dfdc8962b10c3e0 extends Template
             $context['loop']['length'] = $length;
             $context['loop']['last'] = 1 === $length;
         }
-        foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
+        foreach ($context['_seq'] as $context["_key"] => $context["blog"]) {
             // line 19
             echo "                ";
-            $this->loadTemplate("cartBlog.html.twig", "/Pages/blog.html.twig", 19)->display(twig_array_merge($context, ["article" =>             // line 20
-$context["article"]]));
+            $this->loadTemplate("/Composant/cardBlog.html.twig", "/Pages/blog.html.twig", 19)->display(twig_array_merge($context, ["article" =>             // line 20
+$context["blog"]]));
             // line 22
             echo "            ";
             ++$context['loop']['index0'];
@@ -105,7 +105,7 @@ $context["article"]]));
             }
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['blog'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 23
         echo "        </div>
@@ -154,9 +154,9 @@ $context["article"]]));
     <div class=\"news blog\">
         <div class=\"news-container\">
             <h2 class=\"title\">Bienvenue sur notre blog</h2>
-            {% for article in articles %}
-                {% include 'cartBlog.html.twig' with {
-                    article: article
+            {% for blog in blog %}
+                {% include '/Composant/cardBlog.html.twig' with {
+                    article: blog
                 } %}
             {% endfor %}
         </div>

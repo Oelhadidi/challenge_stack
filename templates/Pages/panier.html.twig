@@ -1,12 +1,165 @@
-{% extends 'base.html.twig' %}
+{# {% extends 'base.html.twig' %} #}
 
-{% block title %}Panier{% endblock %}
+{% block title %}
+{% endblock %}
 {% block body %}
+	<link
+	rel="stylesheet" href="css/panier.css">
+	<!-- MENU -->
+	{% include '/Composant/menu.html.twig' with {'user': user} %}
+    <div class="page">
+	{# <section id="Contenue">
+		<div class="Container">
+			<img class="logo" src="css/img/logo.png" alt="Logo">
+			<img class="Paiement" src="css/img/Paiement.jpg" alt="Paiement">
+		</div>
+		<div class="Infos">
 
-<!-- MENU -->
-{% include 'menu.html.twig' with {'user': user} %}
-    <h1>Panier</h1>
-<!-- FOOTER -->
-{% include 'Composant/footer.html.twig' %}
+			<div class="Liste">
+				<ul>
+					<li>Panier</li>
+					<li>Informations</li>
+					<li>Adresse de Livraison</li>
+					<li>Paiement</li>
+				</ul>
+			</div>
+			<hr>
+			<div class="Coordonnées">
+				<label id="Titre" for="coordonnees_input">Coordonnées</label>
+				<input type="text" id="coordonnees_input" placeholder=" Email ou Numéro de portable">
+				<input type="checkbox" id="coordonnees_checkbox">
+				<label for="coordonnees_checkbox">Envoyez-moi les nouvelles et les offres par e-mail</label>
+			</div>
+
+			<div class="Adresse">
+				<label id="Titre" for="Text">Adresse d'expédition</label>
+				<input type="text" id="Text" placeholder=" France">
+				<div class="PetitText">
+					<input type="text" id="PetitText" placeholder=" Prénom">
+					<input type="text" id="PetitText" placeholder=" Nom">
+				</div>
+				<input type="text" id="Text" placeholder=" Adresse">
+				<input type="text" id="Text" placeholder=" Appartement, Suite, etc..">
+				<div class="PetitText">
+					<input type="text" id="PetitText" placeholder=" Code Postal">
+					<input type="text" id="PetitText" placeholder=" Ville">
+				</div>
+				<input type="checkbox" id="coordonnees_checkbox2">
+				<label for="coordonnees_checkbox2">Enregistrer mes données pour la prochaine fois</label>
+			</div>
+
+			<div class="Liens">
+				<a href="C:\Desktop\CoursIW3\Challenge stack\Page Présentation/index.html">
+					Retour au Panier</a>
+				<button id="expedition">Continuer vers l'expédition</button>
+			</div>
+			<div id="ML">
+				<hr>
+				<ul>
+					<li><a href="">Politiques de remboursements</a></li>
+					<li><a href="">Politique d'expédition</a></li>
+					<li><a href="">Politique de confidentialité</a></li>
+					<li><a href="">Conditions d'utilisations</a></li>
+					<li><a href="">Conditions générales de ventes</a></li>
+					<li><a href="">Mentions légales</a></li>
+					<li><a href="">Coordonnées</a></li>
+				</ul>
+			</div>
+		</section> #}
+
+
+		<section id="Panier">
+			<div class="Container2">
+                {% for cart in cartItems %}
+                    <div class="cart-item" >
+                        <div id="item">
+                            <img src="css/img/BORond.jpeg" alt="BORond">
+                            <span>{{cart.nom}}</span>
+                        </div>
+
+                        
+						<div class="cart-data">
+						<span id="cart-price-{{cart.id}}">{{cart.prix}}€ x</span><input class="cart-qty" data-id="{{cart.id}}" type="number" max="99" min="1" value="{{cart.quantity}}"/>
+						</div>
+						<button class="delete-btn" data-product-id="{{ cart.id }}">Supprimer</button>
+                    </div>
+                {% endfor %}
+			</div>
+
+			<div id="Promo">
+				<input type="text" id="text" placeholder=" Code Promotion">
+				{# <button id="expedition2">Valdier</button> #}
+			</div>
+
+			<div id="SousTotal">
+				<span>Sous Total</span>
+				<span class="cart-total">{{cartTotal}}€</span>
+			</div>
+			<div id="SousTotal">
+				<span>Livraison</span>
+				<span>Livraison gratuite</span>
+			</div>
+
+			<div id="Total">
+				<span>Total</span>
+				<span class="cart-total">{{cartTotal}}€</span>
+			</div>
+		</section>
+	</div>
+</div>
+
+	<!-- FOOTER -->
+	{% include 'Composant/footer.html.twig' %}
+
+
+	 <script>
+			    // ADD EVENT LISTENER TO DELETE BUTTONS
+			    document.addEventListener('DOMContentLoaded', function() {
+			        const deleteBtns = document.querySelectorAll('.delete-btn');
+			
+			        deleteBtns.forEach(button => {
+			            button.addEventListener('click', function(event) {
+			                event.preventDefault();
+			
+			                const productId = button.dataset.productId;
+			                deleteProduct(productId);
+			            });
+			        });
+			    });
+			
+			    // DELETE PRODUCT
+			    function deleteProduct(productId) {
+			        fetch(`api/panier/remove/${productId}`, {
+			            method: 'DELETE'
+			        })
+			        .then(response => {
+			            if (response.ok) {
+			                console.log('Product removed from the cart.', response.data);
+			                // Refresh the page or update the cart data after successful deletion
+			                location.reload();
+			            } else {
+			                console.error('An error occurred while removing the product from the cart.');
+			            }
+			        })
+			        .catch(error => {
+			            console.error('An error occurred while removing the product from the cart.', error);
+			        });
+			    }
+
+				document.querySelectorAll('.cart-qty').forEach((cartQty)=>{
+					const cartItemId = cartQty.getAttribute('data-id');
+					cartQty.addEventListener('change',()=>{
+						fetch(`/panier/updateqty/${cartItemId}/${parseInt(cartQty.value)}`,
+						{method:'GET'}).then(res=> res.json()).
+						then(res=>{
+							document.querySelectorAll(`.cart-total`).forEach((node)=>{
+								node.innerHTML = res.total+'€';
+							})
+						})
+					})
+				})
+			
+			</script>
 
 {% endblock %}
+=

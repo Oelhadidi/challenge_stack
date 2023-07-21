@@ -10,7 +10,7 @@ class AproposController extends AbstractController
   public function Apropos()
   {
          // Rediriger vers la page d'inscription
-         return $this->twig->render('/Pages/apropos.html.twig',['page apropos']);
+         return $this->twig->render('/Pages/apropos.html.twig',['user'=>$_SESSION['user']]);
   }
 
 }

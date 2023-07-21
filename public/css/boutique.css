@@ -36,6 +36,9 @@
         line-height: 43px;
         border-bottom: 2px #DAA379 solid;
         color: #1D5F6B;
+        align-self: flex-start;
+        padding-right: 100px;
+        margin-bottom: 15px;
     }
 
     #product-container .filtre .filtre-container
@@ -49,22 +52,27 @@
 
     #product-container .filtre .filtre-container .filtre-ligne
     {
-        padding-top:    8px;
-        padding-bottom: 8px;
+        padding-top:    5px;
+        padding-bottom: 5px;
     }
 
-    #product-container .filtre .filtre-container .filtre-ligne a
+    #product-container .filtre .filtre-container .filtre-ligne button
     {
         font-family: 'Jost';
+        outline: none;
+        border: none;
+        background: none;
+        width: fit-content;
         font-style: normal;
         font-weight: 500;
-        font-size: 22px;
+        font-size: 18px;
         line-height: 32px;
         color: #8D8D8D;
         text-decoration: none;
+        cursor: pointer;
         transition: all ease-in-out 0.4s;
     }
-    #product-container .filtre .filtre-container .filtre-ligne a::after
+    #product-container .filtre .filtre-container .filtre-ligne button::after
     {
         content: "";
         width: 0px;
@@ -74,27 +82,39 @@
         transition:  width 0.3s ease-in-out;
 
     }
-    #product-container .filtre .filtre-container .filtre-ligne a:hover::after
+    .none-liste{
+        list-style: none;
+    }
+    #product-container .filtre .filtre-container .filtre-ligne button:hover::after
     {
-        width: 100%;
+        width: 150%;
 
     }
-    #product-container .filtre .filtre-container .filtre-ligne a:hover
+    #product-container .filtre .filtre-container .filtre-ligne button:hover
     {
         color: #DAA379;
 
+    }
+
+    #product-container .filtre .filtre-container .filtre-ligne button.active{
+        color: #DAA379;
+    }
+    
+    #product-container .filtre .filtre-container .filtre-ligne button.active::after{
+        width: 150%;
     }
     /* CATEGORIE */
     #product-container .produit{
         width: 80%;
         padding: 1em;
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         row-gap: 12px;
         padding-top: 32px;
     }
 
-    #product-container .produit h2
+    #product-container .produit h2 
     {
         
         font-family: 'Jost';
@@ -103,6 +123,7 @@
         font-size: 30px;
         line-height: 43px;
         color: #1D5F6B;
+        align-self: flex-start;
     }
 
     #product-container .produit .image-container
@@ -125,25 +146,25 @@
     }
         /* CATEGORIE IMAGE */
         .c1{
-            background-image: url('../images/col_photo3.jpeg');
+            background-image: url('/css/img/col_photo3.jpeg');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
         }
         .c2{
-            background-image: url('../images/col_photo4.jpeg');
+            background-image: url('/css/img/col_photo4.jpeg');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
         }
         .c3{
-            background-image: url('../images/col_photo2.jpeg');
+            background-image: url('/css/img/col_photo2.jpeg');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
         }
         .c4{
-            background-image: url('../images/col_photo.jpeg');
+            background-image: url('/css/img/col_photo.jpeg');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -169,12 +190,13 @@
 
     #product-container .produit .card-container
     {
-        width: 100%;
+        max-width: 100%;
         height: auto;
-        align-self: center;
+        align-self: flex-start;
         justify-content: flex-start;
         display: grid;
         grid-template-columns: repeat(4, 223px);
+        grid-template-rows: repeat(2, auto);
         row-gap: 20px;
         column-gap: 20px;
         position: relative;
@@ -187,7 +209,7 @@
         padding: 0.5em;
         display: flex;
         flex-direction: column;
-        border-radius: 0px;
+        border-radius: 10px;
         border: 1px #DAA379 solid;
 
     }
@@ -226,15 +248,29 @@
         color: #1D5F6B;
 
     }
+    .des{
+        color: #1D5F6B;
+        font-weight: 600;
+        
+    }
+    #product-container .produit .card-container .card .text-container-card p
+    {
+        font-family: 'Jost';
+        color: #8D8D8D;
+        padding-top: 10px;
+    }
+    
+
     #product-container .produit .card-container .card .text-container-card .price
     {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: center; 
 
     }
     #product-container .produit .card-container .card .text-container-card .price .btn-panier
     {
+        margin-top: 10px;
         background-color: #F0E5D3;
         padding-left: 12px;
         padding-right: 12px;

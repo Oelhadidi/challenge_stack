@@ -1,98 +1,100 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{product.name}}{% endblock %}
-{% block body %}
-    <!-- MENU -->
-    {% include 'Composant/menu.html.twig' with {'user': user} %}
 
-    <!-- CONTENT -->
-    <main>
-         <div class="Back">
-             <a href="/boutique" class="retour">&lsaquo; Retour à la boutique</a>
-             <!-- Bouton qui permet de retourner à la page Liste Article-->
-         </div>
-
-         <section class="detail">
- 
-             <div class="image">
-                 <img src={{product.image}}>
-                 <div class="miniature">
-                     <img src="./images/col_photo.jpeg" class="content">
-                     <img src="./images/col_photo2.jpeg" class="content">
-                     <img src="./images/col_photo3.jpeg" class="content">
-                 </div>
-             </div>
- 
-             <div class="product">
-                 <h2>{{product.name}}</h2>
-                 <p>
-                    {{product.description}}
-                    {{product.couleur}}
-
-                 </p>
-                 <div class="price">
-                     <p>{{product.price}}€</p>
-                     <img src="/img/size.JPG">
-                 </div>
-                 
-                 
- 
-                 <div class="btn">
-                     <button> Ajouter au panier</button>
-                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="20" fill="currentColor"
-                     class="bi bi-heart" viewBox="0 0 16 16">
-                     <path
-                         d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
-                     </svg>
-                 </div>
-                 <hr>
-                 <button class="Commander">Commander</button>
-                 <span id="Livraison">Livraison gratuite</span>
-                 <span id="Dispo">Actuellement Disponible !</span>
-             </div>
-         </section>
-         <hr class="hr2">
-         
-         <h2 id="ProduitSim"> Produits Similaires </h2>
-         <section class="similaire">
-                 
-             <div id="divborder">
-                 <a href="">
-                     <img src="">
-                 </a>
-                 <h2>Alexandra</h2>
-                 <div class="cards">
-                     <p>65€</p>
-                     <button>Ajouter au panier</button>
-                 </div>
-             </div>
- 
-             <div id="divborder">
-                 <a href="">
-                     <img src="" class="img">
-                 </a>
-                 <h2>Gastby</h2>
-                 <div class="cards">
-                     <p>85€</p>
-                     <button>Ajouter au panier</button>
-                 </div>
-             </div>
- 
-             <div id="divborder">
-                 <a href="">
-                     <img src="" class="img">
-                 </a>
-                 <h2>Square Red</h2>
-                 <div class="cards">
-                     <p>92 €</p>
-                     <button>Ajouter au panier</button>
-                 </div>
-                 
-             </div>
-         </section>
- 
-     </main>
-    <!-- Footer -->
-    {% include 'Composant/footer.html.twig' %}
-
+{% block title %}
+	{{product.name}}
 {% endblock %}
+{% block body %}
+	<link
+	rel="stylesheet" href="css/produitDetails.css">
+	<!-- MENU -->
+	{% include 'Composant/menu.html.twig' with {'user': userLoggedIn} %}
+
+	<!-- CONTENT -->
+	<main>
+		<div class"container-details">
+			<div class="Back">
+				<a href="/boutique" class="retour">&lsaquo; Retour à la boutique</a>
+				<!-- Bouton qui permet de retourner à la page Liste Article-->
+			</div>
+
+			<section class="detail">
+
+				<div class="image">
+					<img src='css/img/{{bijoux.Logo}}'>
+					<div class="miniature">
+						<img src="css/img/col_photo.jpeg" class="content">
+						<img src="css/img/col_photo2.jpeg" class="content">
+						<img src="css/img/col_photo3.jpeg" class="content">
+					</div>
+				</div>
+
+				<div class="product-details">
+					<h2>{{bijoux.nom}}</h2>
+					<p>
+						{{bijoux.descriptions}}
+						{{bijoux.couleur}}
+
+					</p>
+					<div class="price">
+						<p>{{bijoux.prix}}€</p>
+						{# <img src="css/img/size.jpg"> #}
+					</div>
+
+
+					<div class="btn">
+						<button class="btn-panier" data-product="{{ product.id }}">Ajouter au Panier</button>
+					</div>
+					<hr>
+					<button class="Commander">Commander</button>
+					<span id="Livraison">Livraison gratuite</span>
+					<span id="Dispo">Actuellement Disponible !</span>
+				</div>
+			</section>
+			<hr class="hr2">
+
+			<h2 id="ProduitSim">
+				Produits Similaires
+			</h2>
+			<section class="similaire">
+
+				<div id="divborder">
+					<a href="">
+						<img src="/css/img/news_picture1.jpeg">
+					</a>
+					<h2>Alexandra</h2>
+					<div class="cards">
+						<p>65€</p>
+						<button>Ajouter au panier</button>
+					</div>
+				</div>
+
+				<div id="divborder">
+					<a href="">
+						<img src="/css/img/news_picture2.jpeg">
+					</a>
+					<h2>Gastby</h2>
+					<div class="cards">
+						<p>85€</p>
+						<button>Ajouter au panier</button>
+					</div>
+				</div>
+
+				<div id="divborder">
+					<a href="">
+						<img src="/css/img/news_picture3.jpeg">
+					</a>
+					<h2>Square Red</h2>
+					<div class="cards">
+						<p>92 €</p>
+						<button>Ajouter au panier</button>
+					</div>
+
+				</div>
+			</section>
+			<div></main>
+			<!-- Footer -->
+			{% include 'Composant/footer.html.twig' %}
+           
+
+		{% endblock %}

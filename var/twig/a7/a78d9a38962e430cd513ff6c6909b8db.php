@@ -44,16 +44,17 @@ class __TwigTemplate_a902debf4d299783340834f53a849b02 extends Template
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
+    <base href=\"/\" target=\"_self\">
     <link rel=\"stylesheet\" href=\"css/style.css\">
     ";
-        // line 8
+        // line 9
         echo "
 </head>
 <body>
     ";
-        // line 11
-        $this->displayBlock('body', $context, $blocks);
         // line 12
+        $this->displayBlock('body', $context, $blocks);
+        // line 13
         echo "</body>
 </html>";
     }
@@ -65,7 +66,7 @@ class __TwigTemplate_a902debf4d299783340834f53a849b02 extends Template
         echo "Acceuil";
     }
 
-    // line 11
+    // line 12
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -79,7 +80,7 @@ class __TwigTemplate_a902debf4d299783340834f53a849b02 extends Template
 
     public function getDebugInfo()
     {
-        return array (  69 => 11,  62 => 5,  57 => 12,  55 => 11,  50 => 8,  45 => 5,  39 => 1,);
+        return array (  70 => 12,  63 => 5,  58 => 13,  56 => 12,  51 => 9,  45 => 5,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -89,6 +90,7 @@ class __TwigTemplate_a902debf4d299783340834f53a849b02 extends Template
     <meta charset=\"utf-8\" />
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
     <title>{% block title %}Acceuil{% endblock %}</title>
+    <base href=\"/\" target=\"_self\">
     <link rel=\"stylesheet\" href=\"css/style.css\">
     {# <link rel=\"stylesheet\" href=\"/assets/public/css/style.css\"> #}
 

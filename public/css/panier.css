@@ -1,0 +1,379 @@
+/*****************Header***********************/
+
+/***************Fin HEADER*********************/
+
+/******************Body************************/
+@media (min-width:740px) {
+    .page {
+        display: flex;
+        min-height: 600px;
+        justify-content: space-around;
+        padding: 0rem 0;
+        margin: 0%;
+
+    }
+
+    .Container {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /******************CONTENUE************************/
+    #Contenue {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0%;
+    }
+
+    /******************PANIER************************/
+    #Panier {
+        width: 50%;
+        height: 100%;
+        background-color: #F0E5D3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0%;
+        margin: 0%;
+        border-left: 1px solid #18678B;
+        justify-content: revert;
+    }
+
+
+}
+
+@media (max-width:740px) {
+    body {
+        font-size: 12px;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+
+    #Contenue {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0%;
+    }
+
+    .Container {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .Paiement {
+        height: 5px;
+    }
+
+    #Panier {
+        width: 100%;
+        background-color: #F0E5D3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0%;
+        margin: 0%;
+        border-bottom: 1px solid #18678B;
+    }
+
+    /* Add more styles as needed */
+}
+
+.Container img.logo {
+    display: block;
+    align-self: center;
+    width: 93px;
+    height: 63px;
+    margin-left: 0 auto;
+
+}
+
+.Container img.Paiement {
+    display: block;
+    align-self: start;
+    width: 100%;
+    height: 100px;
+    margin: 20px 0;
+}
+
+.Infos {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 80%;
+}
+
+.Liste {
+    display: flex;
+    flex-direction: column;
+}
+
+.Liste ul {
+    list-style: none;
+    font-family: 'Jost', sans-serif;
+    font-size: small;
+    color: #18678B;
+    padding: 0%;
+    margin: 0%;
+}
+
+.Liste ul li {
+    display: inline;
+}
+
+.Liste ul li:not(:last-child)::after {
+    content: " > ";
+}
+
+hr {
+    border: 1px solid #F0E5D3;
+    /* Définit une bordure solide noire d'une épaisseur de 1px */
+    margin: 20px 0;
+    /* Définit une marge de 20px au-dessus et en dessous de la ligne de séparation */
+}
+
+label {
+    color: #18678B;
+    font-family: 'Jost', sans-serif;
+
+}
+
+.Coordonnées {
+    margin-bottom: 20px;
+}
+
+#coordonnees_input {
+    width: 99%;
+    height: 30px;
+    border-radius: 5px;
+    border-color: #C5C5C5;
+    font-family: 'Jost', sans-serif;
+    margin: 5px 0;
+}
+
+#Titre {
+    font-family: 'Jost', sans-serif;
+    font-size: large;
+}
+
+#Text {
+    width: 99%;
+    height: 30px;
+    border-radius: 5px;
+    border-color: #C5C5C5;
+    font-family: 'Jost', sans-serif;
+    margin: 5px 0;
+}
+
+.PetitText {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+#PetitText {
+    width: 48%;
+    height: 30px;
+    border-radius: 5px;
+    border-color: #C5C5C5;
+    font-family: 'Jost', sans-serif;
+    margin: 10px 0px;
+}
+
+.Adresse {
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-size: large;
+    color: #18678B;
+}
+
+.Liens {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#expedition {
+    background-color: #18678B;
+    color: white;
+    font-family: 'Jost', sans-serif;
+    font-size: medium;
+    border-radius: 5px;
+    border-color: #C5C5C5;
+}
+
+#expedition:hover {
+    background-color: #F0E5D3;
+    color: #18678B
+}
+
+#ML {
+    display: flex;
+    flex-direction: column;
+}
+
+#ML ul {
+    list-style: none;
+    font-family: 'Jost', sans-serif;
+    font-size: xx-small;
+    color: #18678B;
+    margin: 0;
+    padding: 0;
+}
+
+#ML ul li {
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+#ML ul li:not(:last-child)::after {
+    content: space;
+}
+
+#ML ul a {
+    font-size: xx-small;
+}
+
+.Container2 {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+#item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#item img {
+
+    width: 94px;
+    height: 84px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+#item span {
+    font-family: 'Jost', sans-serif;
+    font-size: medium;
+    color: black;
+    align-items: center;
+}
+
+.Container2 span {
+    align-items: flex-start;
+    font-family: 'Jost', sans-serif;
+    font-size: medium;
+}
+
+#Promo {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+#Promo input {
+    width: 78%;
+    height: 30px;
+    border-radius: 5px;
+    border-color: #C5C5C5;
+    font-family: 'Jost', sans-serif;
+    border-style: none;
+
+}
+
+#Promo button {
+    width: 19%;
+    height: 30px;
+    align-items: center;
+    color: white;
+    background-color: #18678B;
+    border-style: none;
+    border-radius: 5px;
+}
+
+#SousTotal {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#Total {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#Total span {
+    font-weight: 600;
+}
+
+.cart-item {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-qty {
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    outline: none;
+    /* border: none; */
+    background-color: none;
+    margin: 0;
+    background: none;
+    border: 1px solid #18678B;
+    border-radius: 5px;
+}
+
+.cart-data {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10px;
+    height: 100%;
+}
+
+input[type=number]:hover::-webkit-inner-spin-button {
+    opacity: 0.5;
+}

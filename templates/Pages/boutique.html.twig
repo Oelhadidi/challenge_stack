@@ -1,121 +1,199 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Boutique{% endblock %}
-{% block body %} 
-    <!-- Menu -->
-    {% include 'Composant/menu.html.twig' with {'user': user} %}
+{% block body %}
+	<!-- Menu -->
+	{% include 'Composant/menu.html.twig' with {'user': user} %}
+	{% include 'Composant/banner.html.twig' with {
+      title : "Boutique"
+    } %}
 
-    <!-- Content -->
-    <main>
-      
-      <section id="product-container">
-        
-        <div class="filtre">
-            
-            <h2>Items</h2>
-            
-            <ul class="filtre-container">
-              <li class="filtre-ligne">
-                  <a href="#">Tout nos produit</a>
-              </li>
-              
-              <li class="filtre-ligne">
-                <a href="#">Rubis</a>
-              </li>
-              
-              <li class="filtre-ligne">
-                <a href="#">Turquoise</a>
-              </li>
-              
-              <li class="filtre-ligne">
-                <a href="#">Grenat</a>
-              </li>
-              
-              <li class="filtre-ligne">
-                <a href="#">Emeraude</a>
-              </li>
-              
-              <li class="filtre-ligne">
-                <a href="#">Amazonite</a>
-              </li>
+	<!-- Content -->
+	<main>
+		<input id="user_id" type="hidden" value="{{user['id']}}"/>
+		<section id="product-container">
+			<div class="filtre">
+				<h2 class="title3">Items</h2>
+				<ul class="filtre-container">
+					<h3 class="title4">Pierres</h3>
+					<ul class="none-liste">
+						{% for pier in pierres %}
+              {% if loop.index <= 4 %}
+							<li class="filtre-ligne pierres">
+								<button data-id="{{pier.id}}">{{pier.nom}}</button>
+							</li>
+              {% endif %}
+						{% endfor %}
+					</ul>
+					<h3 class="title4">Tailles</h3>
+					<ul class="none-liste">
+						{% for tail in tailles %}
+            {% if loop.index <= 4 %}
+							<li class="filtre-ligne tailles">
+								<button data-id="{{tail.id}}">{{tail.nom}}</button>
+							</li>
+            {% endif %}
+						{% endfor %}
+					</ul>
+					<h3 class="title4">Couleurs</h3>
+					<ulclass="none-liste">
+						{% for coul in couleurs %}
+            {% if loop.index <= 4 %}
+							<li class="filtre-ligne couleurs">
+								<button data-id="{{coul.id}}">{{coul.nom}}</button>
+							</li>
+            {% endif %}
+						{% endfor %}
+						{# </ul> #}
+						<h3 class="title4">Types</h3>
+						<ul class="none-liste">
+							{% for typ in types %}
+								<li class="filtre-ligne types">
+									<button data-id="{{typ.id}}">{{typ.nom}}</button>
+								</li>
+							{% endfor %}
+						</ul>
+					</ul>
 
-            </ul>
+				</div>
 
-        </div>
+				<div
+					class="produit">
 
-        <div class="produit">
-
-            <!-- LISTE DES CATEGORIES -->
-            <h2>Catégorie</h2>
-            <div class="image-container">
-                {% for category in categories %}
-                    <div class="image-box c1">
-                        <p class="title-categorie">{{ category.name }}</p>
-                    </div>
-                {% endfor %}
-            </div>
-
-            <!-- LISTE DES PRODUITS -->
-            <h2>Tous nos produits</h2>
-            <!-- Card composant --> 
-            {% for product in products %}
-                {% include 'cartboutique.html.twig' with {
-                    product: product
+					<!-- LISTE DES CATEGORIES -->
+					<h2 class="title3">Catégorie</h2>
+					<div class="image-container">
+						{% for typ in types %}
+							{% if loop.index <= 4 %}
+								{% include '/Composant/categorie.html.twig' with {
+                  product : typ,
                 } %}
-            {% endfor %}
+							{% endif %}
+						{% endfor %}
 
-            <div class="pagination">
-                <p class="pagination-title">Page</p>
-                <ul class="pagination-container">
-                <li></li>
-                <li>
-                    <a href="#">1</a>
-                </li>
-                <li>
-                    <a href="#">2</a>
-                </li>
-                <li>
-                    <a href="#">3</a>
-                </li>
-                <li>
-                    <a href="#">4</a>
-                </li>
-                <li>
-                    <a href="#">5</a>
-                </li>
-                <li>>></li>
-    
-                </ul>
-            </div>
-        </div>
+					</div>
 
-        <!-- PAGINATION -->
-        <div class="pagination">
-            <p class="pagination-title">Page</p>
-            <ul class="pagination-container">
-              <li></li>
-              <li>
-                <a href="#">1</a>
-              </li>
-              <li>
-                <a href="#">2</a>
-              </li>
-              <li>
-                <a href="#">3</a>
-              </li>
-              <li>
-                <a href="#">4</a>
-              </li>
-              <li>
-                <a href="#">5</a>
-              </li>
-              <li>>></li>
-  
-            </ul>
-        </div>
-      </section>
-    </main>
-    
-    <!-- Footer -->
-    {% include 'Composant/footer.html.twig' %}
-{% endblock %}
+					<!-- LISTE DES PRODUITS -->
+					<h2 class="title3">Tous nos produits</h2>
+					<!-- Card composant -->
+					<div class="card-container">
+						{% for bij in bijoux %}
+							{% include '/Composant/cardboutique.html.twig' with {
+                    product: bij,
+                    userId: user,
+                } %}
+						{% endfor %}
+					</div>
+
+					<!-- PAGINATION -->
+					{# <div class="pagination">
+										                <p class="pagination-title">Page</p>
+										                <ul class="pagination-container">
+										                  <li></li>
+										                  <li>
+										                    <a href="#">1</a>
+										                  </li>
+										                  <li>
+										                    <a href="#">2</a>
+										                  </li>
+										                  <li>
+										                    <a href="#">3</a>
+										                  </li>
+										                  <li>
+										                    <a href="#">4</a>
+										                  </li>
+										                  <li>
+										                    <a href="#">5</a>
+										                  </li>
+										                  <li>>></li>
+										                </ul>
+										            </div> #}
+				</div>
+
+			</section>
+		</main>
+
+		<!-- Footer -->
+		{% include 'Composant/footer.html.twig' %}
+
+		<script>
+			// ADD FAVORITE
+
+const pierres = document.querySelectorAll('.pierres button');
+const tailles = document.querySelectorAll('.tailles button');
+const couleurs = document.querySelectorAll('.couleurs button');
+const types = document.querySelectorAll('.types button');
+const products = document.querySelectorAll('.produit .card');
+const filters = {
+pierre: null,
+taille: null,
+couleur: null,
+type: null
+}
+
+function getSelectedCategory(items, filterKey) {
+items.forEach(item => {
+const itemId = parseInt(item.getAttribute('data-id'));
+item.onclick = () => {
+if (filters[filterKey] === itemId) {
+filters[filterKey] = null;
+item.classList.remove('active');
+} else {
+filters[filterKey] = itemId;
+items.forEach((item) => item.classList.remove('active'))
+item.classList.add('active');
+}
+const filterData = new URLSearchParams(filters)
+fetch(`/api/boutique/filter`, {
+method: 'POST',
+body: filterData
+}).then(res => res.json()).then((res) => filterProducts(res.message))
+}
+})
+}
+
+
+function filterProducts(newProducts) {
+console.log(newProducts);
+products.forEach((product) => {
+if (newProducts.find((newProd) => newProd.id === parseInt(product.getAttribute('data-id')))) 
+product.style.display = 'block';
+ else 
+product.style.display = 'none';
+
+
+})
+}
+
+getSelectedCategory(pierres, 'pierre');
+getSelectedCategory(tailles, 'taille');
+getSelectedCategory(couleurs, 'couleur');
+getSelectedCategory(types, 'type');
+
+document.addEventListener('DOMContentLoaded', function () {
+const addToCartBtns = document.querySelectorAll('.btn-panier');
+
+addToCartBtns.forEach(button => {
+button.addEventListener('click', function (event) {
+event.preventDefault();
+
+const productId = button.getAttribute('data-product');
+const userId = document.querySelector('#user_id').value;
+
+fetch(`/api/boutique/add-cart/${userId}/${productId}`, {method: 'GET'}).then(response => {
+if (!response.ok) 
+return response.text()
+
+
+
+return response.json()
+}).then(data => {
+console.log(data); // Output userCart to the browser console
+}).catch(error => {
+console.error('An error occurred while adding to cart', error);
+});
+});
+});
+});
+
+		</script>
+	{% endblock %}

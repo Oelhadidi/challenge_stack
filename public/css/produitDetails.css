@@ -1,0 +1,262 @@
+body {
+    font-family: 'Jost', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* styles de l'en-tête */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    max-width: 100vw;
+    max-height: fit-content;
+    margin: 0 auto;
+    padding: 3em;
+}
+
+main .container-details {
+    max-height: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+/* styles du contenu principal */
+.Back {
+    display: flex;
+    width: 50%;
+    justify-content: flex-start;
+
+    align-content: center;
+}
+
+.Back a {
+    text-decoration: none;
+    color: black;
+
+
+}
+
+.retour {
+    display: flex;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Pour la class : image */
+
+.image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 15px 0px;
+}
+
+.image img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.image .miniature {
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.image .miniature .content {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+/* Pour la class : product */
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    width: 50%;
+}
+
+.product-details .price {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    align-items: center;
+}
+
+.product-details .price img {
+    width: 50px;
+    height: 75px;
+}
+
+.product-details h2,
+.product-details .price p {
+    display: flex;
+    font-size: 32px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    color: #daa379;
+}
+
+.product-details .price p {
+    color: #1D5F6B
+}
+
+.product-details p {
+    max-width: 65%;
+    font-size: 16px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+.product-details .btn {
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.product-details .btn button {
+    background-color: #daa379;
+    color: white;
+    font-family: 'Jost', sans-serif;
+    font-size: large;
+    width: 250px;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+}
+
+.product-details .btn img {
+    width: 40px;
+}
+
+hr {
+    border: 1px solid #F0E5D3;
+    /* Définit une bordure solide noire d'une épaisseur de 1px */
+    margin: 20px 0;
+    /* Définit une marge de 20px au-dessus et en dessous de la ligne de séparation */
+    width: 70%;
+    margin-left: 50px;
+}
+
+.Commander {
+    background-color: #1D5F6B;
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    font-size: large;
+    width: 200px;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+#Livraison {
+    font-family: 'Jost', sans-serif;
+    font-size: large;
+    color: #1D5F6B;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+#Dispo {
+    font-family: 'Jost', sans-serif;
+    font-size: large;
+    color: #daa379;
+    margin-left: 50px;
+}
+
+.hr2 {
+    width: 100%;
+}
+
+.similaire img {
+    width: 250px;
+    height: 250px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.similaire {
+    display: flex;
+    justify-content: center;
+
+}
+
+.similaire h2 {
+    margin: 0;
+}
+
+#ProduitSim {
+    font-family: 'Jost', sans-serif;
+    font-size: 28px;
+    color: #1D5F6B;
+    text-align: center;
+}
+
+#divborder {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-style: solid;
+    border-color: #daa379;
+    border-radius: 5px;
+    border-width: 0.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.similaire div h2 {
+    color: #1D5F6B;
+    font-family: 'Jost', sans-serif;
+
+}
+
+.cards {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 5px;
+    align-items: center;
+}
+
+.cards button {
+    background-color: #F0E5D3;
+    color: #1D5F6B;
+    border-radius: 15px;
+    border-style: none;
+    height: 40px;
+}
+
+.cards p {
+    font-weight: 600;
+}

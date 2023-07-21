@@ -10,7 +10,7 @@ use \PDO;
 class IndexController extends AbstractController
 {
 
-    #[Route("/", name: "homepage", httpMethod: "GET")]
+    #[Route("/", name: "homepage", httpMethods: ["GET"])]
     public function home()
     {
         $statement = 'SELECT b.id AS id, b.nom AS nom, b.prix AS prix, b.descriptions AS descriptions, images.Logo,
@@ -25,9 +25,9 @@ class IndexController extends AbstractController
         $stmt = $this->db->query($statement);
         $bijoux = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        var_dump($bijoux);
-
-
         return $this->twig->render("/Pages/index.html.twig", ['user' => $_SESSION['user'], 'bijoux' => $bijoux],);
     }
 }
+// if ($_SESSION['status'] == PHP_SESSION_NONE){
+//     $_SESSION start
+// } 

@@ -44,7 +44,7 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
                 <input class=\"searchbar title4\" type=\"text\" placeholder=\"rechercher...\"/>
             </div>
             <div>
-                <a href=\"#\">
+                <a href=\"/\">
                     <img class=\"logo\" src=\"icones/Logo.svg\" alt=\"logo\" />
                 </a>
             </div>
@@ -73,7 +73,7 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
         echo "                <a href=\"#\">
                     <img class=\"logo\" src=\"icones/User.svg\" alt=\"user\" />
                 </a>
-                <a href=\"#\">
+                <a href=\"/panier\">
                     <img class=\"logo\" src=\"icones/Shopping cart.svg\" alt=\"user\" />
                 </a>
             </div>
@@ -86,10 +86,9 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
             <li class=\"link-navbar text16\">
                 <a href=\"/apropos\">Présentation</a>
             </li>
-            <li class=\"link-navbar text16\">
-                <a href=\"/blog\">Blog</a>
-            </li>
-            <li class=\"link-navbar text16\">
+            ";
+        // line 48
+        echo "            <li class=\"link-navbar text16\">
                 <a href=\"/boutique\">Shop</a>
             </li>
             <li class=\"link-navbar text16\">
@@ -118,7 +117,7 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
 
     public function getDebugInfo()
     {
-        return array (  73 => 29,  66 => 24,  61 => 21,  57 => 18,  55 => 17,  37 => 1,);
+        return array (  91 => 48,  73 => 29,  66 => 24,  61 => 21,  57 => 18,  55 => 17,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -133,7 +132,7 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
                 <input class=\"searchbar title4\" type=\"text\" placeholder=\"rechercher...\"/>
             </div>
             <div>
-                <a href=\"#\">
+                <a href=\"/\">
                     <img class=\"logo\" src=\"icones/Logo.svg\" alt=\"logo\" />
                 </a>
             </div>
@@ -154,7 +153,7 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
                 <a href=\"#\">
                     <img class=\"logo\" src=\"icones/User.svg\" alt=\"user\" />
                 </a>
-                <a href=\"#\">
+                <a href=\"/panier\">
                     <img class=\"logo\" src=\"icones/Shopping cart.svg\" alt=\"user\" />
                 </a>
             </div>
@@ -167,9 +166,9 @@ class __TwigTemplate_21aab3360a348f4f301a805d83291e37 extends Template
             <li class=\"link-navbar text16\">
                 <a href=\"/apropos\">Présentation</a>
             </li>
-            <li class=\"link-navbar text16\">
+            {# <li class=\"link-navbar text16\">
                 <a href=\"/blog\">Blog</a>
-            </li>
+            </li> #}
             <li class=\"link-navbar text16\">
                 <a href=\"/boutique\">Shop</a>
             </li>
