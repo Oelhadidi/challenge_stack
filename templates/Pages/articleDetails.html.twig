@@ -3,14 +3,14 @@
 {% block title %}{{article.name}}{% endblock %}
 {% block body %}
     <!-- MENU -->
-    {% include 'Composant/menu.html.twig' with {'user': user} %}
+    {% include 'Composant/menu.html.twig' with {'user': userLoggedIn} %}
 
     <!-- CONTENT -->
-    <h1>{{article.name}}</h1>
-    <p>{{article.author}}</p>
-    <p>{{article.createdAt}}</p>
-    <img src={{article.image}} alt="image article" />
-    <p>{{article.content}}</p>
+    <h1>{{blog.titre}}</h1>
+    <p>{{blog.auteur}}</p>
+    <p>{{blog.date_creation}}</p>
+    <img src={{blog.image_id}} alt="image article" />
+    <p>{{blog.contenu}}</p>
 
 
     <!-- Footer -->

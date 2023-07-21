@@ -15,9 +15,9 @@
     <div class="news blog">
         <div class="news-container">
             <h2 class="title">Bienvenue sur notre blog</h2>
-            {% for article in articles %}
-                {% include 'cartBlog.html.twig' with {
-                    article: article
+            {% for blog in blog %}
+                {% include '/Composant/cardBlog.html.twig' with {
+                    article: blog
                 } %}
             {% endfor %}
         </div>

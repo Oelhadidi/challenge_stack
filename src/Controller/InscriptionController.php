@@ -17,7 +17,7 @@ class InscriptionController extends AbstractController
   }
 
     // CREATE A USER
-    #[Route("/inscription", name: "register_user", httpMethod: "POST")]
+    #[Route("/inscription", name: "register_user", httpMethods: ["POST"])]
     public function registerUser()
     {
         // Récupération de la requête

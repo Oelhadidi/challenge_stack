@@ -8,37 +8,42 @@
     <!-- Content -->
     <main>
       
-      <section id="product-container">
-        
-        <div class="filtre">
-            
+      <section id="product-container">  
+        <div class="filtre">   
             <h2>Items</h2>
-            
             <ul class="filtre-container">
-              <li class="filtre-ligne">
-                  <a href="#">Tout nos produit</a>
-              </li>
-              
-              <li class="filtre-ligne">
-                <a href="#">Rubis</a>
-              </li>
-              
-              <li class="filtre-ligne">
-                <a href="#">Turquoise</a>
-              </li>
-              
-              <li class="filtre-ligne">
-                <a href="#">Grenat</a>
-              </li>
-              
-              <li class="filtre-ligne">
-                <a href="#">Emeraude</a>
-              </li>
-              
-              <li class="filtre-ligne">
-                <a href="#">Amazonite</a>
-              </li>
-
+              <h3>Pierres</h3>
+              <ul>
+                {% for pier in pierres %}
+                <li class="filtre-ligne">
+                  <a href="#">{{pier.nom}}</a>
+                </li>
+                {% endfor %}
+              </ul>
+              <h3>Tailles</h3>
+              <ul>
+                {% for tail in tailles %}
+                <li class="filtre-ligne">
+                  <a href="#">{{tail.nom}}</a>
+                </li>
+                {% endfor %}
+              </ul>
+              <h3>Couleurs</h3>
+              <ul>
+                {% for coul in couleurs %}
+                <li class="filtre-ligne">
+                  <a href="#">{{coul.nom}}</a>
+                </li>
+                {% endfor %}
+              </ul>
+              <h3>Types</h3>
+              <ul>
+                {% for typ in types %}
+                <li class="filtre-ligne">
+                  <a href="#">{{typ.nom}}</a>
+                </li>
+                {% endfor %}
+              </ul>
             </ul>
 
         </div>
@@ -48,9 +53,9 @@
             <!-- LISTE DES CATEGORIES -->
             <h2>Catégorie</h2>
             <div class="image-container">
-                {% for category in categories %}
+                {% for typ in types %}
                     <div class="image-box c1">
-                        <p class="title-categorie">{{ category.name }}</p>
+                        <p class="title-categorie">{{ typ.nom }}</p>
                     </div>
                 {% endfor %}
             </div>
@@ -58,64 +63,70 @@
             <!-- LISTE DES PRODUITS -->
             <h2>Tous nos produits</h2>
             <!-- Card composant --> 
-            {% for product in products %}
-                {% include 'cartboutique.html.twig' with {
-                    product: product
+            {% for bij in bijoux %}
+                {% include '/Composant/cardboutique.html.twig' with {
+                    product: bij,
+                    userId: user,
                 } %}
             {% endfor %}
 
+             <!-- PAGINATION -->
             <div class="pagination">
                 <p class="pagination-title">Page</p>
                 <ul class="pagination-container">
-                <li></li>
-                <li>
+                  <li></li>
+                  <li>
                     <a href="#">1</a>
-                </li>
-                <li>
+                  </li>
+                  <li>
                     <a href="#">2</a>
-                </li>
-                <li>
+                  </li>
+                  <li>
                     <a href="#">3</a>
-                </li>
-                <li>
+                  </li>
+                  <li>
                     <a href="#">4</a>
-                </li>
-                <li>
+                  </li>
+                  <li>
                     <a href="#">5</a>
-                </li>
-                <li>>></li>
-    
+                  </li>
+                  <li>>></li>
                 </ul>
             </div>
         </div>
 
-        <!-- PAGINATION -->
-        <div class="pagination">
-            <p class="pagination-title">Page</p>
-            <ul class="pagination-container">
-              <li></li>
-              <li>
-                <a href="#">1</a>
-              </li>
-              <li>
-                <a href="#">2</a>
-              </li>
-              <li>
-                <a href="#">3</a>
-              </li>
-              <li>
-                <a href="#">4</a>
-              </li>
-              <li>
-                <a href="#">5</a>
-              </li>
-              <li>>></li>
-  
-            </ul>
-        </div>
       </section>
     </main>
     
     <!-- Footer -->
     {% include 'Composant/footer.html.twig' %}
+
+  <script>
+  // ADD FAVORITE
+  document.addEventListener('DOMContentLoaded', function() {
+    const addToCartBtns = document.querySelectorAll('.btn-panier');
+
+    addToCartBtns.forEach(button => {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const userId = button.dataset.user;
+        const productId = parseInt(button.dataset.product);
+
+        
+
+        fetch(`/api/boutique/add-cart/${userId}/${productId}`, {
+            method: 'GET'
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.userCart); // Output userCart to the browser console
+        })
+        .catch(error => {
+            console.error('An error occurred while adding to cart', error);
+        });
+      });
+    });
+  });
+  </script>
 {% endblock %}
