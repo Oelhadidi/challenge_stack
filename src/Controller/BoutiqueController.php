@@ -136,10 +136,11 @@ class BoutiqueController extends AbstractController
         }
   }
 
-  // ADD TO CART
+  // ADD PRODUCT TO CART
   #[Route("/api/boutique/add-cart/{userId}/{productId}", name: "add_cart", httpMethods: ["GET"])]
   public function addCart(int $userId, int $productId)
   {
+      session_start();
       // Récupérer l'id de l'utilisateur connecté 
       $authController = new AuthController($this->twig, $this->db, $this->AuthToken);
       $userLoggedIn = $authController->isLoggedIn();
@@ -157,19 +158,19 @@ class BoutiqueController extends AbstractController
           }
 
           // Récupérer le panier actuel de l'utilisateur depuis la session
-          $userCart = isset($_COOKIE['cartItems'][$userId]) ? $_COOKIE['cartItems'][$userId] : [];
+          $userCart = isset($_SESSION['cartItems'][$userId]) ? json_decode(urldecode($_SESSION['cartItems'][$userId]), true) : [];
 
           // Vérifier si le produit existe déjà dans le panier
-            if (isset($userCart[$bijoux['id']])) { // Use 'id' key here
-                // Le produit existe déjà dans le panier, augmenter la quantité
-                $userCart[$bijoux['']]++; // Use 'id' key here
-            } else {
-                // Le produit n'existe pas dans le panier, l'ajouter avec une quantité de 1
-                $userCart[$bijoux['id']] = 1; // Use 'id' key here
-            }
+          if (isset($userCart[$bijoux['id']])) { // Use 'id' key here
+              // Le produit existe déjà dans le panier, augmenter la quantité
+              $userCart[$bijoux['id']]++; // Use 'id' key here
+          } else {
+              // Le produit n'existe pas dans le panier, l'ajouter avec une quantité de 1
+              $userCart[$bijoux['id']] = 1; // Use 'id' key here
+          }
 
-            // Mettre à jour le panier de l'utilisateur dans la session
-            setcookie('cartItems[' . $userId . ']', [$userCart]);
+          // Mettre à jour le panier de l'utilisateur dans la session
+          $_SESSION['cartItems'][$userId] = json_encode($userCart);
 
           // Retourner une réponse JSON indiquant que le produit a été ajouté au panier avec succès
           return $this->returnJsonResponse(['success' => true, 'message' => 'Product added to cart.', 'userCart' => $userCart]);
@@ -178,6 +179,9 @@ class BoutiqueController extends AbstractController
       // Si l'utilisateur n'est pas connecté, retourner une erreur
       return $this->returnJsonResponse(['error' => 'Unauthorized.'], 401);
   }
+
+
+
 
   private function returnJsonResponse(array $data, int $statusCode = 200) {
       header('Content-Type: application/json');
